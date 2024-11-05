@@ -9900,3 +9900,21 @@ del {
 .logo>a>img {
     width: 100px;
 }
+
+.features-icon {
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.features-icon>i {
+    position: absolute;
+    z-index: 4;
+    color: white;
+    font-size: 30px;
+}

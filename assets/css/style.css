@@ -4956,6 +4956,7 @@ hr {
 .pricing-area .properties .single-features .features-icon {
     position: relative;
     top: 8px;
+
 }
 
 
@@ -5395,6 +5396,9 @@ hr {
 .services-area .single-services .features-icon {
     position: relative;
     top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -9901,7 +9905,7 @@ del {
     width: 100px;
 }
 
-.features-icon {
+/* .features-icon {
     width: 60px;
     height: 60px;
     background-color: red;
@@ -9910,11 +9914,12 @@ del {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+} */
 
 .features-icon>i {
     position: absolute;
     z-index: 4;
     color: white;
     font-size: 30px;
+    margin-right: 30px;
 }

@@ -10683,6 +10683,8 @@ textarea.form-control-lg {
   .px-lg-5 {
     padding-right: 3rem !important;
     padding-left: 3rem !important;
+    
+ 
   }
   .py-lg-0 {
     padding-top: 0 !important;
@@ -16709,3 +16711,7 @@ select:-webkit-autofill:focus {
   padding-right: 10px;
   padding-left: 10px;
 }
+
+
+
+/* bảng thành viên  */

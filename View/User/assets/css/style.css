@@ -3617,7 +3617,7 @@ hr {
 
 .section-padding30 {
     padding-top: 100px;
-    padding-bottom: 100px;
+
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -3851,7 +3851,7 @@ hr {
 /* line 899, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_common.scss */
 
 .section-tittle h2 {
-    font-size: 140px;
+    font-size: 80px;
     display: block;
     color: #2c234d;
     font-weight: 700;
@@ -5204,7 +5204,7 @@ hr {
 /* line 11, C:/Users/HP/Desktop/July-HTML/292 Health coach/assets/scss/_about.scss */
 
 .about-area2 .support-wrapper .left-content2 {
-    width: 38%;
+    width: 49%;
     padding-left: 60px;
 }
 

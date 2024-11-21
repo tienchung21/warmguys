@@ -11,6 +11,7 @@
   font-family: inherit;
   font-size: 14px;
   font-weight: normal;
+  width: 560px;
   height: 42px;
   line-height: 40px;
   outline: none;
@@ -25,11 +26,12 @@
       -ms-user-select: none;
           user-select: none;
   white-space: nowrap;
-  width: auto; }
+ }
   .nice-select:hover {
-    border-color: #dbdbdb; }
+    border-color: #000000; }
   .nice-select:active, .nice-select.open, .nice-select:focus {
-    border-color: #999; }
+    border-color: #999;
+  color: black; }
   .nice-select:after {
     border-bottom: 2px solid #999;
     border-right: 2px solid #999;
@@ -62,7 +64,7 @@
             transform: scale(1) translateY(0); }
   .nice-select.disabled {
     border-color: #ededed;
-    color: #999;
+    color: #060606;
     pointer-events: none; }
     .nice-select.disabled:after {
       border-color: #cccccc; }

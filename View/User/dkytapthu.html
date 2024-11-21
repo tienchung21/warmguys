@@ -35,6 +35,9 @@
             font-size: 20px;
             
         }
+        section{
+            color: black;
+        }
         h2 {
             text-align: center;
         }
@@ -45,7 +48,7 @@
             display: block;
             font-weight: bold;
         }
-        input[type="text"], input[type="tel"], input[type="email"] {
+        input[type="text"], input[type="tel"], input[type="email"], section[id="idCars"] {  
             width: 100%;
             padding: 8px;
             border: 1px solid #ccc;
@@ -111,6 +114,7 @@
                                         </ul>
                                     </li>
                                     <li><a href="contact.html">Liên hệ</a></li>
+                                    <li><a href="../Admin/index.html">quản lý</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -162,10 +166,21 @@
                     <label for="idCard">Căn Cước:</label>
                     <input type="text" id="idCard" name="idCard" required pattern="^\d{9,12}$" title="Căn cước không hợp lệ, vui lòng nhập lại.">
                 </div>
+                <div class="form-group">
+                    <label for="idCard">Khung giờ gọi cho bạn:</label>
+                    <select id="idCars">
+                        <option value="1">9:00 AM - 12:00 PM</option>
+                        <option value="2">12:00 PM - 2:00 PM</option>
+                        <option value="3">2:00 PM - 5:00 PM</option>
+                        <option value="4">5:00 PM - 10:00 PM</option>
+                      </select>
+                </div>
+                <br> <br>
                 <div class="form-buttons">
                     <button type="submit" class="btn btn-submit">Xác nhận</button>
                     <button type="button" class="btn btn-cancel" onclick="cancelForm()">Hủy</button>
                 </div>
+                
             </form>
         </div>
         
@@ -180,7 +195,6 @@
                 event.preventDefault();
                 window.location.href = "index.html";
             });
-            window.onload = populateDates;
         </script>
         
     </main>

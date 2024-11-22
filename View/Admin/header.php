@@ -47,7 +47,7 @@
                     <div class="header-profile-actions">
                         <a href="profile.html">Profile</a>
                         <a href="account-settings.html">Settings</a>
-                        <a href="login.html">Logout</a>
+                        <a href="logout.php">Logout</a>
                     </div>
                 </div>
             </li>

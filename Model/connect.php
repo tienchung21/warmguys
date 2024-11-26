@@ -1,16 +1,16 @@
 <?php
-class connect_database
-{
-    private function connect()
+class connect_database{
+    public function connect()
     {
-        $conn= new mysqli("localhost","root","","warmguys");
-        if($conn->connect_errno)
+        $conn= mysqli_connect("localhost","root","","warmguyss");
+        if(!$conn)
         {
             echo"<script>Alert('Ket noi khong thanh cong')</script>";
             exit();
         }
-        else
-        return $conn;
+        else{
+            return $conn;
+        }
     }
     public function dangnhaptaikhoan($username, $password)
     {
@@ -25,3 +25,4 @@ class connect_database
             return 0;
     }
 }
+?>

@@ -34,7 +34,7 @@
                     </div>
                 </li>
                 <li class="sidebar-dropdown">
-                    <a href="#">
+                    <a href="goitap.php">
                         <i class="bi bi-box"></i>
                         <span class="menu-text">Quản lí gói tập</span>
                     </a>
@@ -50,7 +50,7 @@
                     </div>
                 </li>
                 <li class="sidebar-dropdown">
-                    <a href="#">
+                    <a href="discount.php">
                         <i class="bi bi-gift"></i>
                         <span class="menu-text">Quản lí khuyến mãi</span>
                     </a>

@@ -11,7 +11,7 @@
         <div class="sidebarMenuScroll">
             <ul>
                 <li class="sidebar-dropdown active">
-                    <a href="form-inputs.html">
+                    <a href="quanlithanhvien.php">
                         <i class="bi bi-person"></i>
                         <span class="menu-text">Quản lí thành viên</span>
                     </a>
@@ -50,7 +50,7 @@
                     </div>
                 </li>
                 <li class="sidebar-dropdown">
-                    <a href="#">
+                    <a href="discount.php">
                         <i class="bi bi-gift"></i>
                         <span class="menu-text">Quản lí khuyến mãi</span>
                     </a>
@@ -117,6 +117,25 @@
                     <a href="#">
                         <i class="bi bi-layout-sidebar"></i>
                         <span class="menu-text">Báo cáo và thống kê</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <ul>
+                            <li>
+                                <a href="#">1</a>
+                            </li>
+                            <li>
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="sidebar-dropdown">
+                    <a href="laylaimk.php">
+                        <i class="bi bi-layout-sidebar"></i>
+                        <span class="menu-text">lấy lại mật khẩu</span>
                     </a>
                     <div class="sidebar-submenu">
                         <ul>

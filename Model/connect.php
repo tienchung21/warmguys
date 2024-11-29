@@ -40,7 +40,7 @@ class connect_database
     }
     public function tuychinh($sql)
     {
-        $link=$this->connect();
+        $link=$this->connect();     
         if($link->query($sql))
             return 1;
         else

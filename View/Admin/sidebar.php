@@ -11,7 +11,7 @@
         <div class="sidebarMenuScroll">
             <ul>
                 <li class="sidebar-dropdown active">
-                    <a href="form-inputs.html">
+                    <a href="form-inputs.php">
                         <i class="bi bi-person"></i>
                         <span class="menu-text">Quản lí thành viên</span>
                     </a>
@@ -34,7 +34,7 @@
                     </div>
                 </li>
                 <li class="sidebar-dropdown">
-                    <a href="#">
+                    <a href="goitap.php">
                         <i class="bi bi-box"></i>
                         <span class="menu-text">Quản lí gói tập</span>
                     </a>

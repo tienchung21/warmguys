@@ -24,4 +24,26 @@ class connect_database
         } else
             return 0;
     }
+    public function xuatdulieu($sql)
+    {
+        $arr=array();
+        $link=$this->connect();
+        $result=$link->query($sql);
+        if($result->num_rows)
+        {
+            while($row=$result->fetch_assoc())
+            $arr[]=$row;
+            return $arr;
+        }
+        else
+        return 0;
+    }
+    public function tuychinh($sql)
+    {
+        $link=$this->connect();
+        if($link->query($sql))
+            return 1;
+        else
+            return 0;
+    }
 }

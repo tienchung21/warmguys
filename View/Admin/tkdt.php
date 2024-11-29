@@ -46,68 +46,50 @@
 			<!-- Sidebar wrapper end -->
 
 			<div class="main-container">
-				<?php
-					include('header.php');
-				?>
-
-                <div class="row" style="margin-left: 10px;">
+			<?php
+				include('header.php');
+			?>
+			<?php
+            include('../../model/quanlydoanhthu.php');
+            include('../../Controller/cquanlydoanhthu.php');
+			$obj = new hoadon();
+            $hoadon = $obj->danhsachhoadon();
+			$tong=0;
+			if ($hoadon) {
+            echo '    <div class="row" style="margin-left: 10px;">
 							<div class="col-12">
 								<div class="card">
-								<div class="formloc">
-											<form action=""><br>
-												<div class="form-group">
-													Từ Ngày <input type="text" name="ngay" id="ngay" required pattern="^\d{10,2}$" title="Nhập sai ngày, xin mời nhập lại." style="width: 40px; margin-left: 20px;"> 
-													Tháng <input type="text" name="thang" id="thang" style="width: 40px;"> 
-													Năm <input type="text" name="nam" id="nam" style="width: 40px;"> <br> <br>
-													Đến Ngày <input type="text" name="ngayd" id="ngayd" style="width: 40px; margin-left: 10px;"> 
-													Tháng <input type="text" name="thangd" id="thangd" style="width: 40px;"> 
-													Năm <input type="text" name="namd" id="namd" style="width: 40px;">
-												</div>
-												<div class="form-buttons"><br>
-													<input type="button" class="btn-loc"  value="Lọc" Style="margin-left:110px">
-												</div>
-											</form>
+											</form method="post">
 										</div>
 									<div class="card-body">
 										<div class="table-responsive">
 											<table class="table m-0">
 												<thead>
 													<tr>
-														<th>STT</th>
+														<th>Mã Hóa Đơn</th>
 														<th>Ngày lập</th>
 														<th>Tên gói</th>
 														<th>Giá gói</th>
 														<th>Thời hạn gói</th>
-                                                        <th>Ngày bắt đầu</th>
-                                                        <th>Ngày kết thúc</th>
-                                                        <th>Mã Khuyến mãi</th>
+                                                        <th>Loại Khuyến mãi</th>
                                                         <th>Thành tiền</th>
 													</tr>
 												</thead>
-												<tbody>
-													<tr>
-														<td>1</td>
-														<td>25/11/2024</td>
-														<td>Classic</td>
-														<td>22000000</td>
-														<td>6 tháng</td>
-														<td>01/11/2024</td>
-                                                        <td>01/05/2025</td>
-                                                        <td>1</td>
-                                                        <td>16500000 đ</td>
+												<tbody>';
+			for ($i = 0; $i < count($hoadon); $i++) {
+				$tong+=$hoadon[$i]["ThanhTien"];
+							echo                       '<tr>
+														<td>'.$hoadon[$i]["MaHD"].'</td>
+														<td>'.$hoadon[$i]["NgayLap"].'</td>
+														<td>'.$hoadon[$i]["TenGoi"].'</td>
+														<td>'.number_format($hoadon[$i]["GiaGoi"]).' VND</td>
+														<td>'.$hoadon[$i]["ThoiHanGoi"].' Tháng </td>
+                                                        <td>'.$hoadon[$i]["TenKhuyenMai"].'</td>
+                                                        <td>'.number_format($hoadon[$i]["ThanhTien"]).' VND</td>
 													</tr>
-													<tr>
-														<td>2</td>
-														<td>25/11/2024</td>
-														<td>Classic</td>
-														<td>21000000</td>
-														<td>6 tháng</td>
-														<td>01/11/2024</td>
-                                                        <td>01/05/2025</td>
-                                                        <td>1</td>
-                                                        <td>16500000 đ</td>
-													</tr>
-                                                    <tr>
+                                                    ';}
+                echo '
+						<tr>
 														<td></td>
 														<td></td>
 														<td></td>
@@ -115,20 +97,15 @@
 														<td></td>
 														<td></td>
                                                         <td></td>
-                                                        <td></td>
-                                                        <td>Tổng : 16500000 đ</td>
+                                                        <td>Tổng : '.number_format($tong).' VND</td>
 													</tr>
-												</tbody>
-											</table>
-										
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-			    </div>
-		    </div>
+				</tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </div>'; }
+			?>
 		<!-- Page wrapper end -->
 
 

@@ -1,5 +1,6 @@
 <?php
 include('connect.php');
+
 class hoadon extends connect_database{
     public function danhsachhoadon()
     {

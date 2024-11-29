@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+
  if (!$_SESSION["dangnhap"])
  	header("Location:login.php");
 ?>

@@ -48,7 +48,12 @@ session_start();
 				?>
 
                 <div class="row" style="margin-left: 10px;">
-							<div class="col-12">
+				`				<div class="text-end mb-3">
+                						<a href="../Admin/addDevice.php" class="btn btn-primary">
+                    						<i class="bi bi-plus-circle"></i>Thêm thiết bị
+                						</a>
+            						</div>
+								<div class="col-12">
 								<div class="card">
 									<!-- <div class="card-body">
 										<div class="table-responsive">
@@ -57,12 +62,11 @@ session_start();
 											</form>
 										</div>
 									</div> -->
+									
 									<?php
-													$sql= "select * from thietbi";
-												 $p->selectalldevice($sql);
-													
-													
-												?>
+										$sql= "select * from thietbi";
+										$p->selectalldevice($sql);	
+									?>
 								</div>
 
 							</div>

@@ -3,7 +3,6 @@
     class device extends connect_database{
         public function selectalldevice($sql){
             $link = $this->connect();
-          
             $ketqua = mysqli_query($link, $sql);
             $i = mysqli_num_rows($ketqua);
             if($i>0){
@@ -33,11 +32,14 @@
 									<td style="padding-top: 18px;">'.$loaiTB.'</td>
 									<td style="padding-top: 18px;">'.$tingtrang.'</td>
 									<td>
-	                                    <img src="./assets/img//device/'.$hinh.'" alt="" width="50px" height="50px">
+	                                    <img src="./assets/img/device/'.$hinh.'" alt="" width="50px" height="50px">
                                     </td>
-									<td>
-                                        <button type="button" class="btn btn-outline-success">Sửa</button>
-                                        <button type="button" class="btn btn-outline-danger">Xóa</button>
+									<td class="d-flexfv">
+                                        <a href="" class="btn btn-outline-success">Sửa</a>
+                                        <form action="" method="post">
+                                            <a href="device.php?idtb=<?php echo '.$idtb.'; ?>" name="Xóa" class="btn btn-outline-danger">Xóa</a>
+                                        </form>
+                                        
                                     </td>
 								</tr>
                             </tbody>';
@@ -50,3 +52,4 @@
         }
     }
 ?>
+

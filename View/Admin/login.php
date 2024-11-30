@@ -6,21 +6,23 @@ include('../../model/connect.php');
 
 
 if (isset($_POST["btDangnhap"])) {
-	$obj = new connect_database();
+    $obj = new connect_database();
     $email = $_POST["username"];
     $password = $_POST["password"];
 
     $id_tk = $obj->dangnhaptaikhoan($email, $password);
 
     if ($id_tk) {
-        echo "<script>alert('Đăng nhập thành công!');</script>";
-        $_SESSION["dangnhap"] = $id_tk;
-        header("Location: index.php");
-        exit();
+        echo "<script>
+            alert('Đăng nhập thành công!');
+            window.location.href = 'index.php';
+        </script>";
+        $_SESSION['dangnhap'] = $id_tk;
     } else {
-        echo "<script>alert('Đăng nhập không thành công! Vui lòng kiểm tra lại.');</script>";
-        header("Location: login.php");
-        exit();
+        echo "<script>
+            alert('Đăng nhập không thành công! Vui lòng kiểm tra lại.');
+            window.location.href = 'login.php';
+        </script>";
     }
 }
 

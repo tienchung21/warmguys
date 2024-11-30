@@ -1,7 +1,7 @@
 <?php
 class connect_database
 {
-    private function connect()
+    public function connect()
     {
         $conn= new mysqli("localhost","root","","warmguys");
         if($conn->connect_errno)

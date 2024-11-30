@@ -11,7 +11,7 @@
         <div class="sidebarMenuScroll">
             <ul>
                 <li class="sidebar-dropdown active">
-                    <a href="form-inputs.php">
+                    <a href="quanlithanhvien.php">
                         <i class="bi bi-person"></i>
                         <span class="menu-text">Quản lí thành viên</span>
                     </a>

@@ -132,25 +132,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="sidebar-dropdown">
-                    <a href="laylaimk.php">
-                        <i class="bi bi-layout-sidebar"></i>
-                        <span class="menu-text">lấy lại mật khẩu</span>
-                    </a>
-                    <div class="sidebar-submenu">
-                        <ul>
-                            <li>
-                                <a href="#">1</a>
-                            </li>
-                            <li>
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+             
             </ul>
         </div>
     </div>

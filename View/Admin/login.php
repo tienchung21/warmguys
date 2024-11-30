@@ -99,7 +99,7 @@ if (isset($_POST["btDangnhap"])) {
                 <div class="mb-3">
                     <div class="d-flex justify-content-between">
                         <label class="form-label">Password</label>
-                        <a href="forgot-password.html" class="btn-link ml-auto">Forgot password?</a>
+                        <a href="laylaimk.php" class="btn-link ml-auto">Forgot password?</a>
                     </div>
                     <input type="password" class="form-control" name="password">
                 </div>

@@ -34,7 +34,7 @@ include('../../Model/xuatdulieu.php'); // Bao gồm file xử lý dữ liệu
 $obj = new database();
 $taikhoan = $obj->danhsachtaikhoan(); // Lấy danh sách tài khoản
 ?>
- <?php if ($taikhoan): ?>
+ <!-- <?php if ($taikhoan): ?>
                     <?php foreach ($taikhoan as $tk): ?>
                         <tr>
                             <td><?= htmlspecialchars($tk['ID']); ?></td>
@@ -46,7 +46,7 @@ $taikhoan = $obj->danhsachtaikhoan(); // Lấy danh sách tài khoản
                     <tr>
                         <td colspan="3" class="text-center">Không có tài khoản nào</td>
                     </tr>
-                <?php endif; ?>
+                <?php endif; ?> -->
          
 <form method="post" action="guimail_.php" class="col-6 m-auto border border-primary p-2">
 <p>email

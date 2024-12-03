@@ -1,9 +1,6 @@
 <?php
-
-include_once('../../Model/Modeldevice.php');
-
-
-include('../../Controller/DeviceQL.php');
+include_once('../../model/quanlykhuyenmai.php');
+include('../../Controller/c_discount.php');
 ?>
 
 <!doctype html>
@@ -51,37 +48,43 @@ include('../../Controller/DeviceQL.php');
             <?php
             include('header.php');
             ?>
-            <h3 class="text-center mb-4">Thêm thiết bị</h3>
-            <form method="post" class="shadow p-4 rounded bg-light" enctype="multipart/form-data" style="margin-left: 20px;">
+            <div class="text-end mb-3">
+                <a href="../Admin/discount.php" class="btn btn-primary">
+                    <i class="bi bi-arrow-left-circle"></i> quay lại
+                </a>
+            </div>
+            <h3 class="text-center mb-4">Thêm Khuyến Mãi</h3>
+            <form method="post" class="shadow p-4 rounded bg-light">
                 <div class="mb-3">
-                    <label for="" class="form-label">Tên thiết bi</label>
-                    <input type="text" class="form-control" name="tenTB"/>
+                    <label for="MaKM" class="form-label">Mã Khuyến Mãi</label>
+                    <input type="text" class="form-control" name="MaKM" />
                 </div>
                 <div class="mb-3">
-					<label class="form-label d-flex">Loại thiết bị</label>
-					<select name="loaiTB" class="select-single js-states form-control" title="Select Product Category" data-live-search="true">
-						<option value="">--Chọn loại thiết bị--</option>
-						<option value="1">Tập tay</option>
-						<option value="2">Tập chân</option>
-						<option value="3">Tập cơ bụng</option>
-						<option value="4">Tập ngực</option>
-					</select>
-				</div>
-                <div class="mb-4">
-                <label class="form-label d-flex">Tình trạng thiết bị</label>
-					<select name="tinhtrang" class="select-single js-states form-control" title="Select Product Category" data-live-search="true">
-						<option value="">--Chọn tình trạng--</option>
-						<option value="1">Bảo trì</option>
-						<option value="2">Chưa bảo trì</option>
-					</select >
+                    <label for="TenKM" class="form-label">Tên Khuyến Mãi</label>
+                    <input type="text" class="form-control" name="TenKM" required />
                 </div>
-                <div class="input-group mb-3">
-					<label class="input-group-text" for="inputGroupFile01">Hình ảnh</label>
-					<input type="file" class="form-control" id="inputGroupFile01" name="myfile">
-				</div>
+                <div class="mb-3">
+                    <label for="PhanTramDiscount" class="form-label">Phần Trăm Discount</label>
+                    <input type="number" class="form-control" name="PhanTramDiscount" required />
+                </div>
+                <div class="mb-3">
+                    <label for="NgayBatDauKM" class="form-label">Ngày Bắt Đầu</label>
+                    <input type="Date" class="form-control" name="NgayBatDauKM" required />
+                </div>
+                <div class="mb-3">
+                    <label for="NgayKetThucKM" class="form-label">Ngày Kết Thúc</label>
+                    <input type="Date" class="form-control" name="NgayKetThucKM" required />
+                </div>
+                <div class="mb-3">
+                    <label for="soluongnguoithamgia" class="form-label">Trạng Thái</label>
+                    <select name="trangthai" id="">
+                        <option value="Active">Active</option>
+                        <option value="Not-Active">Not-Active</option>
+                    </select>
+                </div>
                 <div class="text-end">
-                    <button type="submit" name="Thêm" class="btn btn-primary">
-                        <i class="bi bi-plus-circle"></i>Thêm
+                    <button type="submit" name="btThem" class="btn btn-primary">
+                        <i class="bi bi-plus-circle"></i> Thêm Gói Tập
                     </button>
                 </div>
             </form>
@@ -102,5 +105,5 @@ include('../../Controller/DeviceQL.php');
     <script src="assets/js/main.js"></script>
 
 </body>
-</html>
 
+</html>

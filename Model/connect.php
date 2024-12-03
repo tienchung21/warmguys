@@ -3,7 +3,7 @@ class connect_database
 {
     public function connect()
     {
-        $conn= new mysqli("localhost","root","","warmguys");
+        $conn= new mysqli("localhost","root","","warmguyss");
         if($conn->connect_errno)
         {
             echo"<script>Alert('Ket noi khong thanh cong')</script>";
@@ -38,15 +38,16 @@ class connect_database
         else
         return 0;
     }
+
+
+
     public function tuychinh($sql)
     {
-        $link=$this->connect();
+        $link=$this->connect();     
         if($link->query($sql))
             return 1;
         else
             return 0;
     }
-
-    
 }
 ?>

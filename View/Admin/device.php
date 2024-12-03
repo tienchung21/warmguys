@@ -1,6 +1,7 @@
 <?php
 session_start();
-	include("../../Controller/DeviceController.php");
+	include_once("../../Controller/DeviceController.php");
+	include_once('../../Controller/DeviceQL.php');
 	$p = new device();
 ?>
 <!doctype html>
@@ -48,7 +49,7 @@ session_start();
 				?>
 
                 <div class="row" style="margin-left: 10px;">
-				`				<div class="text-end mb-3">
+								<div class="text-end mb-3">
                 						<a href="../Admin/addDevice.php" class="btn btn-primary">
                     						<i class="bi bi-plus-circle"></i>Thêm thiết bị
                 						</a>
@@ -74,7 +75,9 @@ session_start();
 			    </div>
 		    </div>
 		<!-- Page wrapper end -->
+<?php
 
+ ?>
 
 
 

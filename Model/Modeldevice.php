@@ -1,12 +1,6 @@
 <?php
-include('connect.php');
+include_once('connect.php');
 class deviceQL extends connect_database{
-    
-    // public function xoagoitap($idTB)
-    // {
-    //     $sql="delete from goitap where magoi=$magoi";
-    //     return $this->tuychinh($sql);
-    // }
     public function themthietbi($sql)
     {
         return $this->tuychinh($sql);
@@ -29,28 +23,53 @@ class deviceQL extends connect_database{
         }
     }
     public function xoathietbi($idtb){
-        $sql = "SELECT Hinhanh FROM thietbi WHERE idTB = $idtb";
-        $result = $this->tuychinh($sql);
-        if ($result) {
+        $sql = "SELECT Hinhanh FROM thietbi WHERE MaTB = $idtb";
+        $result = $this->xuatdulieu($sql);
+        if (!empty($result)) {
             $file_name = $result[0]['Hinhanh']; // Lấy tên ảnh
-
             // 2. Xóa file ảnh trên server
             $file_path = "./assets/img/device/". $file_name;
             if (file_exists($file_path)) {
                 unlink($file_path); // Xóa ảnh nếu tồn tại
             }
         }
-
         // 3. Xóa bản ghi thiết bị trong cơ sở dữ liệu
-        $sql_delete = "DELETE FROM thietbi WHERE idTB = $idtb";
+        $sql_delete = "DELETE FROM thietbi WHERE MaTB = $idtb";
         return $this->tuychinh($sql_delete); // Thực hiện câu lệnh xóa
     }
+
+    public function Capnhatthietbi($idtb, $tenTB, $loaiTB, $tinhtrang, $hinhanh)
+{
+    // Kiểm tra và xử lý hình ảnh nếu có
+    $sql_update = "UPDATE thietbi SET TenTB = '$tenTB', LoaiTB = '$loaiTB', TinhTrangTB = '$tinhtrang'";
+
+    // Nếu có hình ảnh mới, xử lý và cập nhật vào cơ sở dữ liệu
+    if ($hinhanh['name'] != "") {
+        $name = time() . '_' . $hinhanh['name'];
+        $tmp_name = $hinhanh['tmp_name'];
+        $folder = "./assets/img/device/";
+        
+        // Upload hình ảnh
+        if ($this->uploadfile($name, $tmp_name, $folder)) {
+            // Lấy tên hình ảnh cũ để xóa
+            $sql = "SELECT Hinhanh FROM thietbi WHERE MaTB = $idtb";
+            $result = $this->xuatdulieu($sql);
+            if (!empty($result)) {
+                $file_name = $result[0]['Hinhanh']; // Lấy tên ảnh cũ
+                $file_path = "./assets/img/device/" . $file_name;
+                if (file_exists($file_path)) {
+                    unlink($file_path); // Xóa ảnh cũ nếu tồn tại
+                }
+            }
+            // Cập nhật hình ảnh mới
+            $sql_update .= ", Hinhanh = '$name'";
+        }
+    }
+
+    // Hoàn tất câu lệnh SQL và thực thi
+    $sql_update .= " WHERE MaTB = $idtb";
+    return $this->tuychinh($sql_update); // Thực thi câu lệnh cập nhật
 }
 
-
-    // public function suathietbi($sql)
-    // {
-    //     return $this->tuychinh($sql);
-    // }
-
+}
 ?>

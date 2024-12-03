@@ -1,5 +1,5 @@
 <?php
-    include("../../Model/connect.php");
+    include_once("../../Model/connect.php");
     class device extends connect_database{
         public function selectalldevice($sql){
             $link = $this->connect();
@@ -34,13 +34,12 @@
 									<td>
 	                                    <img src="./assets/img/device/'.$hinh.'" alt="" width="50px" height="50px">
                                     </td>
-									<td class="d-flexfv">
-                                        <a href="" class="btn btn-outline-success">Sửa</a>
-                                        <form action="" method="post">
-                                            <a href="device.php?idtb=<?php echo '.$idtb.'; ?>" name="Xóa" class="btn btn-outline-danger">Xóa</a>
-                                        </form>
-                                        
-                                    </td>
+                                    <form action=""   method="post">
+									    <td> 
+                                            <a href="../../View/Admin/updateDevice.php?id='.$idtb.'" class="btn btn-outline-success h-100">Sửa</a>
+                                            <button type="submit" value='.$idtb.'  name="nutXoa" class="btn btn-outline-danger">Xóa</button>
+                                        </td>
+                                    </form>
 								</tr>
                             </tbody>';
                         $dem++;

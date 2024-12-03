@@ -47,7 +47,16 @@
                     <div class="header-profile-actions">
                         <a href="profile.html">Profile</a>
                         <a href="account-settings.html">Settings</a>
-                        <a href="logout.php">Logout</a>
+                        <a href="#" onclick="confirmLogout()">Logout</a>
+
+                        <script>
+                        function confirmLogout() {
+                            if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
+                                window.location.href =
+                                    "logout.php"; // Điều hướng tới trang logout.php nếu người dùng xác nhận
+                            }
+                        }
+                        </script>
                     </div>
                 </div>
             </li>

@@ -11,7 +11,7 @@
         <div class="sidebarMenuScroll">
             <ul>
                 <li class="sidebar-dropdown active">
-                    <a href="form-inputs.php">
+                    <a href="quanlithanhvien.php">
                         <i class="bi bi-person"></i>
                         <span class="menu-text">Quản lí thành viên</span>
                     </a>
@@ -76,7 +76,7 @@
                                 <a href="#">1</a>
                             </li>
                             <li>
-                                <a href="#">2</a>
+                                <a href="theodoitapluyen.php">Theo dõi tập luyện</a>
                             </li>
                         </ul>
                     </div>
@@ -132,25 +132,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="sidebar-dropdown">
-                    <a href="laylaimk.php">
-                        <i class="bi bi-layout-sidebar"></i>
-                        <span class="menu-text">lấy lại mật khẩu</span>
-                    </a>
-                    <div class="sidebar-submenu">
-                        <ul>
-                            <li>
-                                <a href="#">1</a>
-                            </li>
-                            <li>
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+             
             </ul>
         </div>
     </div>

@@ -1,4 +1,9 @@
 <?php
+
+session_start();
+ if (!$_SESSION["dangnhap"])
+ 	header("Location:login.php");
+
 include_once('../../model/quanlygoitap.php');
 
 
@@ -51,8 +56,8 @@ include('../../Controller/cgoitap.php');
             include('header.php');
             ?>
             <div class="text-end mb-3">
-                <a href="../Admin/themgoitap.php" class="btn btn-primary">
-                    <i class="bi bi-plus-circle"></i> Thêm mới
+                <a href="goitap.php" class="btn btn-primary">
+                    <i class="bi bi-arrow-left-circle"></i> Quay lại
                 </a>
             </div>
             <h3 class="text-center mb-4">Thêm Gói Tập</h3>

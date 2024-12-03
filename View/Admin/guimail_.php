@@ -55,10 +55,14 @@ if ($user) {
         ]);
         $mail->send();
         echo 'Đã gửi thông tin tài khoản qua email.';
+        echo "<script>alert('tai khoan mat khau da duoc gui');
+        window.location.href = 'login.php';</script>";
     } catch (Exception $e) {
         echo 'Không thể gửi email. Lỗi: ', $mail->ErrorInfo;
+   
     }
 } else {
     // Nếu email không tồn tại
     echo 'Email không tồn tại trong hệ thống.';
+    echo "<script>alert('email khong ton tai');window.location.href = 'login.php';</script>";
 }

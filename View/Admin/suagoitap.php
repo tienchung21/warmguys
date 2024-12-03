@@ -1,4 +1,7 @@
 <?php
+session_start();
+if (!$_SESSION["dangnhap"])
+    header("Location:login.php");
 include_once('../../model/quanlygoitap.php');
 include('../../Controller/cgoitap.php');
 if (isset($_GET['magoi'])) {

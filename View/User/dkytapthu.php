@@ -39,7 +39,7 @@ include('../../Controller/cdkytapthu.php');
             background-size: cover;
             color: beige;
             font-size: 20px;
-            
+
         }
         section{
             color: black;
@@ -47,9 +47,11 @@ include('../../Controller/cdkytapthu.php');
         h2 {
             text-align: center;
         }
+
         .form-group {
             margin-bottom: 15px;
         }
+
         label {
             display: block;
             font-weight: bold;
@@ -61,16 +63,19 @@ include('../../Controller/cdkytapthu.php');
             border-radius: 4px;
             box-sizing: border-box;
         }
+
         .form-buttons {
             display: flex;
             justify-content: space-between;
         }
+
         .btn-submit {
             background-color: #4CAF50;
             color: white;
             width: 200px;
             height: 60px;
         }
+
         .btn-cancel {
             background-color: #f44336;
             color: white;
@@ -189,14 +194,14 @@ include('../../Controller/cdkytapthu.php');
                 
             </form>
         </div>
-        
+
         <script>
             function cancelForm() {
                 document.getElementById("registrationForm").reset();
                 alert("Đã hủy đăng ký");
             }
         </script>
-        
+
     </main>
     <footer>
         <!--? Footer Start-->
@@ -212,7 +217,8 @@ include('../../Controller/cdkytapthu.php');
                                 </div>
                                 <!-- Menu -->
                                 <!-- Header Start -->
-                                <div class="header-area main-header2 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
+                                <div class="header-area main-header2 wow fadeInUp" data-wow-duration="2s"
+                                    data-wow-delay=".4s">
                                     <div class="main-header main-header2">
                                         <div class="menu-wrapper menu-wrapper2">
                                             <!-- Main-menu -->
@@ -227,7 +233,8 @@ include('../../Controller/cdkytapthu.php');
                                 </div>
                                 <!-- Header End -->
                                 <!-- social -->
-                                <div class="footer-social mt-30 wow fadeInUp" data-wow-duration="3s" data-wow-delay=".8s">
+                                <div class="footer-social mt-30 wow fadeInUp" data-wow-duration="3s"
+                                    data-wow-delay=".8s">
                                     <a href="#"><i class="fab fa-twitter"></i></a>
                                     <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
                                     <a href="#"><i class="fab fa-pinterest-p"></i></a>
@@ -246,7 +253,9 @@ include('../../Controller/cdkytapthu.php');
                                     Copyright &copy;
                                     <script>
                                         document.write(new Date().getFullYear());
-                                    </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    </script> All rights reserved | This template is made with <i class="fa fa-heart"
+                                        aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                        target="_blank">Colorlib</a>
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 </p>
                             </div>

@@ -32,6 +32,11 @@ class database{
             $sql="select * from thanhvien ";
         return $this->xuatdulieu($sql);
     }
+    public function danhsachtheodoi()
+    {
+            $sql="select * from theodoitapluyen ";
+        return $this->xuatdulieu($sql);
+    }
     public function danhsachtaikhoan()
     {
             $sql="select * from taikhoan";
@@ -66,8 +71,6 @@ class database{
         $sql="delete from thanhvien where MaTV='$MaTV'";
         return $this->xoadulieu($sql);
     }
-  
-
     public function themsanpham($sql)
     {
         return $this->themdulieu($sql);
@@ -84,16 +87,6 @@ class database{
     {
         return $this->suadulieu($sql);
     }
-
-
-
-
-
-
-
-
-
-
 }
 
 

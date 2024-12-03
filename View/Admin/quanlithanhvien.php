@@ -92,11 +92,11 @@ $idSua = 1;
 				<!-- Content wrapper start -->
 				<div class="content-wrapper">
 
-					<style>
-						.content-wrapper {
+					<!-- <style>
+					/*	.content-wrapper {
 							position: relative;
 
-						}
+						}*/
 
 						table {
 							width: 60vw;
@@ -160,7 +160,7 @@ $idSua = 1;
 							top: 0;
 
 						}
-					</style>
+					</style> -->
 					<?php
 
 					include('../../Model/xuatdulieu.php');
@@ -178,7 +178,7 @@ $idSua = 1;
 						$GioiTinh1 = $_POST["GioiTinh1"];
 						$sql = "insert into thanhvien(TenTV,SoDTTV,EmailTV,DiaChiTV,GioiTinh) values ('$TenTV1','$SoDTTV1','$EmailTV1','$DiaChiTV1','$GioiTinh1')";
 						if ($obj->themsanpham($sql))
-							echo "<script>alert('Them thanh cong');window.location.href = 'form-inputs.php';</script>";
+							echo "<script>alert('Them thanh cong');window.location.href = 'quanlithanhvien.php';</script>";
 						else
 							echo "Them that bai";
 					}
@@ -186,7 +186,7 @@ $idSua = 1;
 					if (isset($_POST["btXoa"])) {
 						$MaTV = $_POST["btXoa"];
 						if ($obj->xoathanhvien($MaTV))
-							echo "<script>alert('Xoa thanh cong');window.location.href = 'form-inputs.php';</script>";
+							echo "<script>alert('Xoa thanh cong');window.location.href = 'quanlithanhvien.php';</script>";
 						else
 							echo "xoa that bai";
 					}
@@ -200,7 +200,7 @@ $idSua = 1;
 						$GioiTinh = $_POST["GioiTinh"];
 						$sql = "update thanhvien set TenTV='$TenTV',SoDTTV='$SoDTTV',EmailTV='$EmailTV',DiaChiTV='$DiaChiTV',GioiTinh='$GioiTinh' where MaTV=$MaTV";
 						if ($obj->suathanhvien($sql)) {
-							echo "<script>alert('Sua thanh cong');window.location.href = 'form-inputs.php';</script>";
+							echo "<script>alert('Sua thanh cong');window.location.href = 'quanlithanhvien.php';</script>";
 						} else
 							echo "Sua that bai";
 					}
@@ -216,8 +216,7 @@ $idSua = 1;
 							<form method="post">
 								<table class="table m-0">
 									<thead>
-										<button type="button" style="margin: 10px;" class="btn btn-success"
-											onclick="on()">thêm thành viên</button>
+									<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#momodalthem">thêm thành viên</button>
 										<tr>
 											<th>Mã Thành Viên</th>
 											<th>Tên Thành Viên</th>
@@ -326,38 +325,48 @@ $idSua = 1;
 
 
 				<!-- modal -->
-				<div class="modal-them" id="modal-them">
-					<form method="post" enctype="multipart/form-data">
-						<table class="table-modal">
-
-							<tbody>
-								<td class="bi bi-x" onclick="off()"></td>
-								<tr>
-									<td>tên thành viên</td>
-									<td><input name="TenTV1" type="text"></td>
-								</tr>
-								<tr>
-									<td>số điện thoại</td>
-									<td><input name="SoDTTV1" type="text"></td>
-								</tr>
-								<tr>
-									<td>email</td>
-									<td><input name="EmailTV1" type="text"></td>
-								</tr>
-								<tr>
-									<td>địa chỉ</td>
-									<td><input name="DiaChiTV1" type="text"></td>
-								</tr>
-								<tr>
-									<td>giới tính</td>
-									<td><input name="GioiTinh1" type="text"></td>
-								</tr>
-								<td><input type="submit" name="btThem" value="thêm"></td>
-							</tbody>
-						</table>
-					</form>
+				<div class="modal fade" role="dialog" id="momodalthem">
+					<div class="modal-dialog">
+					<form method="POST" id="editCategoryForm">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h3 class="modal-title text-center">THEM THÀNH VIÊN</h3>
+										<button type="button" class="btn-close" data-dismiss="modal"
+											aria-label="Close"></button>
+									</div>
+									<div class="modal-body">
+										<input type="hidden" name="MaTV" id="editMaTV">
+										<div class="mb-3">
+											<label for="editTenTV" class="form-label">Tên Thành viên</label>
+											<input type="text" class="form-control" name="TenTV1" id="editTenTV"
+												required>
+										</div>
+										<div class="mb-3">
+											<label for="editSoDTTV" class="form-label">SDT</label>
+											<textarea class="form-control" name="SoDTTV1" id="editSoDTTV"></textarea>
+										</div>
+										<div class="mb-3">
+											<label for="editEmailTV" class="form-label">Email</label>
+											<textarea class="form-control" name="EmailTV1" id="editEmailTV"></textarea>
+										</div>
+										<div class="mb-3">
+											<label for="editDiaChiTV" class="form-label">Địa chỉ</label>
+											<textarea class="form-control" name="DiaChiTV1" id="editDiaChiTV"></textarea>
+										</div>
+										<div class="mb-3">
+											<label for="editGioiTinh" class="form-label">Giới tính</label>
+											<textarea class="form-control" name="GioiTinh1" id="editGioiTinh"></textarea>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+										<button type="submit" name="btThem" class="btn btn-primary">Cập Nhật</button>
+									</div>
+								</div>
+							</form>
+					</div>
 				</div>
-				<form method="post" enctype="multipart/form-data">
+				<!-- <form method="post" enctype="multipart/form-data">
 					<div class="modal-them" id="modal-sua">
 						<table class="table-modal">
 							<?php
@@ -394,7 +403,7 @@ $idSua = 1;
 							</tbody>
 						</table>
 					</div>
-				</form>
+				</form> -->
 			</div>
 			<!-- Content wrapper end -->
 
@@ -435,7 +444,7 @@ $idSua = 1;
 
 	<!-- Main Js Required -->
 	<script src="assets/js/main.js"></script>
-	<script>
+	<!-- <script>
 		function off() {
 			document.getElementById("modal-them").style.display = "none";
 		}
@@ -451,7 +460,7 @@ $idSua = 1;
 		function on1() {
 			document.getElementById("modal-sua").style.display = "flex";
 		}
-	</script>
+	</script> -->
 
 </body>
 

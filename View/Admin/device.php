@@ -1,3 +1,9 @@
+<?php
+session_start();
+	include_once("../../Controller/DeviceController.php");
+	include_once('../../Controller/DeviceQL.php');
+	$p = new device();
+?>
 <!doctype html>
 <html lang="en">
 	<head>
@@ -27,7 +33,6 @@
 		<link rel="stylesheet" href="assets/vendor/overlay-scroll/OverlayScrollbars.min.css">
 
 	</head>
-
 	<body>
 
 		<div class="page-wrapper">
@@ -44,70 +49,25 @@
 				?>
 
                 <div class="row" style="margin-left: 10px;">
-							<div class="col-12">
+								<div class="text-end mb-3">
+                						<a href="../Admin/addDevice.php" class="btn btn-primary">
+                    						<i class="bi bi-plus-circle"></i>Thêm thiết bị
+                						</a>
+            						</div>
+								<div class="col-12">
 								<div class="card">
-									<div class="card-body">
+									<!-- <div class="card-body">
 										<div class="table-responsive">
-											<table class="table m-0">
-												<thead>
-													<tr>
-														<th>STT</th>
-														<th>Tên thiết bị</th>
-														<th>Loại thiết bị</th>
-														<th>Tình trạng</th>
-														<th>Hình ảnh</th>
-                                                        <th>Tùy Chỉnh</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>1</td>
-														<td>Alia</td>
-														<td>Willams</td>
-														<td>+143-148-60985</td>
-														<td>+143-148-60985</td>
-														<td>
-                                                            <button type="button" class="btn btn-outline-success">Sửa</button>
-                                                            <button type="button" class="btn btn-outline-danger">Xóa</button>
-                                                        </td>
-													</tr>
-													<tr>
-														<td>2</td>
-														<td>Nathan</td>
-														<td>James</td>
-														<td>+143-148-60985</td>
-														<td>+143-148-60985</td>
-														<td>+278-119-88790</td>
-
-													</tr>
-													<tr>
-														<td>3</td>
-														<td>Kelly</td>
-														<td>Thomas</td>
-														<td>+143-148-60985</td>
-														<td>+143-148-60985</td>
-														<td>+125-117-88763</td>
-													</tr>
-													<tr>
-														<td>4</td>
-														<td>Steve</td>
-														<td>Smitth</td>
-														<td>+143-148-60985</td>
-														<td>+143-148-60985</td>
-														<td>+334-676-66530</td>
-													</tr>
-													<tr>
-														<td>5</td>
-														<td>Kevin</td>
-														<td>Oliver</td>
-														<td>+143-148-60985</td>
-														<td>+143-148-60985</td>
-														<td>+435-667-99808</td>
-													</tr>
-												</tbody>
-											</table>
+											<form action="">
+												
+											</form>
 										</div>
-									</div>
+									</div> -->
+									
+									<?php
+										$sql= "select * from thietbi";
+										$p->selectalldevice($sql);	
+									?>
 								</div>
 
 							</div>
@@ -115,8 +75,9 @@
 			    </div>
 		    </div>
 		<!-- Page wrapper end -->
+<?php
 
-
+ ?>
 
 
 

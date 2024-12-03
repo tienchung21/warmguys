@@ -32,6 +32,11 @@ class database{
             $sql="select * from thanhvien ";
         return $this->xuatdulieu($sql);
     }
+    public function danhsachtheodoi()
+    {
+            $sql="select * from theodoitapluyen ";
+        return $this->xuatdulieu($sql);
+    }
     public function danhsachtaikhoan()
     {
             $sql="select * from taikhoan";

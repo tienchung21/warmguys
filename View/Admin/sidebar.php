@@ -76,7 +76,7 @@
                                 <a href="#">1</a>
                             </li>
                             <li>
-                                <a href="#">2</a>
+                                <a href="theodoitapluyen.php">Theo dõi tập luyện</a>
                             </li>
                         </ul>
                     </div>

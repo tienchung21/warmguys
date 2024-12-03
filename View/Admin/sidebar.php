@@ -119,12 +119,6 @@
                         <span class="menu-text">Báo cáo và thống kê</span>
                     </a>
                 </li>
-                <li class="sidebar-dropdown">
-                    <a href="laylaimk.php">
-                        <i class="bi bi-layout-sidebar"></i>
-                        <span class="menu-text">lấy lại mật khẩu</span>
-                    </a>
-                </li>
              
             </ul>
         </div>

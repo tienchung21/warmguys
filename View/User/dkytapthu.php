@@ -1,3 +1,9 @@
+<?php
+include_once('../../model/quanlytapthu.php');
+
+
+include('../../Controller/cdkytapthu.php');
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -35,7 +41,9 @@
             font-size: 20px;
 
         }
-
+        section{
+            color: black;
+        }
         h2 {
             text-align: center;
         }
@@ -48,10 +56,7 @@
             display: block;
             font-weight: bold;
         }
-
-        input[type="text"],
-        input[type="tel"],
-        input[type="email"] {
+        input[type="text"], input[type="tel"], input[type="email"], section[id="idCars"] {  
             width: 100%;
             padding: 8px;
             border: 1px solid #ccc;
@@ -120,13 +125,14 @@
                                         </ul>
                                     </li>
                                     <li><a href="contact.html">Liên hệ</a></li>
+                                    <li><a href="../Admin/index.php">quản lý</a></li>
                                 </ul>
                             </nav>
                         </div>
-                        <!-- Header-btn -->
                         <div class="header-btns d-none d-lg-block f-right">
-                            <a href="contact.html" class="btn">Contact me</a>
+                            
                         </div>
+                        <!-- Header-btn -->
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -154,30 +160,38 @@
             </div>
         </div>
         <div class="form-container">
-            <form id="registrationForm">
+            <form method="post" id="registrationForm">
                 <div class="form-group">
                     <label for="name">Họ Tên:</label>
-                    <input type="text" id="name" name="name" required pattern="^[a-zA-Z\s]+$"
-                        title="Họ tên không hợp lệ, vui lòng nhập lại.">
+                    <input type="text" name="name" required pattern="^[a-zA-Z\s]+$" placeholder="Nhập họ và tên" title="Họ tên không hợp lệ, vui lòng nhập lại.">
                 </div>
                 <div class="form-group">
                     <label for="phone">Số điện thoại:</label>
-                    <input type="tel" id="phone" name="phone" required pattern="^\d{10,11}$"
-                        title="Số điện thoại không hợp lệ, vui lòng nhập lại.">
+                    <input type="tel"  name="phone" required pattern="^\d{10,11}$" placeholder="Nhập số điện thoại" title="Số điện thoại không hợp lệ, vui lòng nhập lại.">
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required title="Email không hợp lệ, vui lòng nhập lại.">
+                    <input type="email"  name="email" required placeholder="Nhập email" title="Email không hợp lệ, vui lòng nhập lại.">
                 </div>
                 <div class="form-group">
                     <label for="idCard">Căn Cước:</label>
-                    <input type="text" id="idCard" name="idCard" required pattern="^\d{9,12}$"
-                        title="Căn cước không hợp lệ, vui lòng nhập lại.">
+                    <input type="text"  name="idCard" required pattern="^\d{9,12}$" placeholder="Nhập CCCD" title="Căn cước không hợp lệ, vui lòng nhập lại.">
                 </div>
+                <div class="form-group">
+                    <label >Khung giờ gọi cho bạn:</label>
+                    <select class="form-group"  name="Thoigianlienlac" placeholder="Chọn khung giờ">
+                        <option value="9:00 AM - 12:00 PM">9:00 AM - 12:00 PM</option>
+                        <option value="12:00 PM - 2:00 PM">12:00 PM - 2:00 PM</option>
+                        <option value="2:00 PM - 5:00 PM">2:00 PM - 5:00 PM</option>
+                        <option value="5:00 PM - 10:00 PM">5:00 PM - 10:00 PM</option>
+                      </select>
+                </div>
+                <br> <br>
                 <div class="form-buttons">
-                    <button type="submit" class="btn btn-submit">Xác nhận</button>
+                    <button type="submit" name="dkytap" class="btn btn-submit">Xác nhận</button>
                     <button type="button" class="btn btn-cancel" onclick="cancelForm()">Hủy</button>
                 </div>
+                
             </form>
         </div>
 
@@ -186,13 +200,6 @@
                 document.getElementById("registrationForm").reset();
                 alert("Đã hủy đăng ký");
             }
-
-            document.getElementById("registrationForm").addEventListener("submit", function (event) {
-                alert("Đăng ký thành công!");
-                event.preventDefault();
-                window.location.href = "index.html";
-            });
-            window.onload = populateDates;
         </script>
 
     </main>
@@ -207,7 +214,6 @@
                             <div class="single-footer-caption mb-50 text-center">
                                 <!-- logo -->
                                 <div class="footer-logo wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
                                 </div>
                                 <!-- Menu -->
                                 <!-- Header Start -->
@@ -219,12 +225,6 @@
                                             <div class="main-menu main-menu2 text-center">
                                                 <nav>
                                                     <ul>
-                                                        <li><a href="index.html">Home</a></li>
-                                                        <li><a href="about.html">About</a></li>
-                                                        <li><a href="courses.html">Courses</a></li>
-                                                        <li><a href="pricing.html">Pricing</a></li>
-                                                        <li><a href="gallery.html">Gallery</a></li>
-                                                        <li><a href="contact.html">Contact</a></li>
                                                     </ul>
                                                 </nav>
                                             </div>

@@ -92,7 +92,7 @@
                                 <a href="#">1</a>
                             </li>
                             <li>
-                                <a href="#">2</a>
+                                <a href="giahanthanhvien.php">Danh sách thành viên cần gia hạn</a>
                             </li>
                         </ul>
                     </div>
@@ -105,32 +105,19 @@
                     <div class="sidebar-submenu">
                         <ul>
                             <li>
-                                <a href="#">1</a>
+                                <a href="phanhoichoduyet.php">Phản hồi chờ duyệt</a>
                             </li>
                             <li>
-                                <a href="#">1</a>
+                                <a href="phanhoidaduyet.php">Phản hồi đã duyệt</a>
                             </li>
                         </ul>
                     </div>
                 </li>
                 <li class="sidebar-dropdown">
-                    <a href="#">
+                    <a href="tkdt.php">
                         <i class="bi bi-layout-sidebar"></i>
                         <span class="menu-text">Báo cáo và thống kê</span>
                     </a>
-                    <div class="sidebar-submenu">
-                        <ul>
-                            <li>
-                                <a href="#">1</a>
-                            </li>
-                            <li>
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
              
             </ul>

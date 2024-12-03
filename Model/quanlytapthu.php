@@ -5,6 +5,11 @@ class dkytapthu extends connect_database{
     {
         return $this->tuychinh($sql);
     }
+    public function dsdkytapthu()
+    {
+        $sql="select * from khtapthu";
+        return $this->xuatdulieu($sql);
+    }
 }
 
 ?>

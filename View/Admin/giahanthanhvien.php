@@ -25,17 +25,28 @@
 		<!-- Main css -->
 		<link rel="stylesheet" href="assets/css/main.min.css">
 		<link rel="stylesheet" href="assets/vendor/overlay-scroll/OverlayScrollbars.min.css">
-		<style>
-		.btn-loc {
-            background-color: green;
-            width: 100px;
-			color: white;
-        }	
+		<style>	
 		.date{
 			float: left;
 			padding-left:50px
 		}
-		</style>
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn-submit:hover  {
+            background-color: #4CAF50;
+            color: white;
+            width: 200px;
+            height: 60px;
+        }
+        .btn-submit{
+            background-color: #83a4d2;
+            color: black;
+            width: 200px;
+            height: 60px;
+        }
+    </style>
 
 	</head>
 
@@ -55,73 +66,45 @@
 			?>
 			<?php
 			
-            include('../../model/quanlydoanhthu.php');
-			$obj = new hoadon();
-            $hoadon = $obj->danhsachhoadon();
-			$tong=0;
-			if ($hoadon) {
+            include('../../Model/quanlygiahan.php');
+			include('../../Controller/cgiahan.php');
+			$obj = new giahan();
+            $giahan = $obj->danhsachgiahan();
+			if ($giahan) {
             echo '    <div class="row" style="margin-left: 10px;">
 							<div class="col-12">
-							<h4>Thống kê doanh thu</h4>
-								<div class="card">
-								<form method="Post">
-<div class="card col-8">
-    <div class="card col-8 date" style="display: inline-block; margin-left:20px;">Từ ngày &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Đến ngày</div>
-	<div class="card col-8 date" style="display: inline-block; margin-left:20px;">
-	<input type="date" name="tungay" id="tungay" required style="display: flex; width: 150px; float:left;"> 
-	<input type="date" name="denngay" id="denngay" required style="display: flex; width: 150px;margin-left:10px ;float:left;">
-	<input type="submit" name="subngay" value="Thống kê" style="margin-left:10px ; width: 100px; background-color:#99999 ; border-color: green; border-radius: 2px;">
-	</div>
-</div>	
-</form>
-											</form method="post">
-											
-										</div>
-										
+									<h4>Danh sách thành viên cần gia hạn</h4>
 									<div class="card-body">
 										<div class="table-responsive">
 											<table class="table m-0">
+											<form method="post">
 												<thead>
 													<tr>
-														<th>Mã Hóa Đơn</th>
-														<th>Ngày lập</th>
 														<th>Mã thành viên</th>
 														<th>Tên thành viên</th>
-														<th>Tên gói</th>
-														<th>Giá gói</th>
-														<th>Thời hạn gói</th>
-                                                        <th>Loại Khuyến mãi</th>
-                                                        <th>Thành tiền</th>
+														<th>Ngày kết thúc</th>
 													</tr>
 												</thead>
 												<tbody>';
-			for ($i = 0; $i < count($hoadon); $i++) {
-				$tong+=$hoadon[$i]["ThanhTien"];
-							echo                       '<tr>
-														<td>'.$hoadon[$i]["MaHD"].'</td>
-														<td>'.date('d/m/Y', strtotime($hoadon[$i]["NgayLap"])).'</td>
-														<td>'.$hoadon[$i]["MaTV"].'</td>
-														<td>'.$hoadon[$i]["TenTV"].'</td>
-														<td>'.$hoadon[$i]["TenGoi"].'</td>
-														<td>'.number_format($hoadon[$i]["GiaGoi"]).' VND</td>
-														<td>'.$hoadon[$i]["ThoiHanGoi"].' Tháng </td>
-                                                        <td>'.$hoadon[$i]["TenKhuyenMai"].'</td>
-                                                        <td>'.number_format($hoadon[$i]["ThanhTien"]).' VND</td>
+			for ($i = 0; $i < count($giahan); $i++) {
+							echo                    '<tr>
+														<td>'.$giahan[$i]["MaTV"].'</td>
+                                                        <td>'.$giahan[$i]["TenTV"].'</td>
+														<td>'.date('d/m/Y', strtotime($giahan[$i]["NgayKetThuc"])).'</td>
 													</tr>
+													
+                                                    
+													
                                                     ';}
                 echo '
-						<tr>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-                                                        <td></td>
-														<td></td>
-                                                        <td>Tổng : '.number_format($tong).' VND</td>
-													</tr>
 				</tbody>
+				
+					<tr>
+                                                        <td></td>
+                                                        <td><button type="submit" name="giahan" class="btn btn-submit" style="width: 190px;">Gửi yêu cầu gia hạn</button></td>
+                                                        <td></td>
+                                                    </tr>
+					</form>
                         </table>
                     </div>
                 </div>

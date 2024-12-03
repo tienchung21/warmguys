@@ -9,6 +9,7 @@ class goitap extends connect_database{
             $sql="select * from goitap";
         return $this->xuatdulieu($sql);
     }
+    
     public function xoagoitap($magoi)
     {
         $sql="delete from goitap where magoi=$magoi";

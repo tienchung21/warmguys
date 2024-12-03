@@ -71,8 +71,6 @@ class database{
         $sql="delete from thanhvien where MaTV='$MaTV'";
         return $this->xoadulieu($sql);
     }
-  
-
     public function themsanpham($sql)
     {
         return $this->themdulieu($sql);
@@ -89,16 +87,6 @@ class database{
     {
         return $this->suadulieu($sql);
     }
-
-
-
-
-
-
-
-
-
-
 }
 
 

@@ -67,6 +67,7 @@ if (isset($_POST["btDangnhap"])) {
 
 </head>
 
+
 <body class="login-container">
 
     <!-- Loading wrapper start -->
@@ -87,10 +88,10 @@ if (isset($_POST["btDangnhap"])) {
         <div class="login-box">
             <div class="login-form">
                 <a href="index.php" class="login-logo">
-                    <img src="assets/images/logo.svg" alt="Vico Admin" />
+                    <img src="../User/assets/img/logo/logo.png" alt="Vico Admin" height="100px" />
                 </a>
                 <div class="login-welcome">
-                    Welcome back, <br />Please login to your Arise admin account.
+                    Chào mừng trở lại<br />Vui lòng đăng nhập nếu bạn có tài khoản admin
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Username</label>
@@ -99,26 +100,25 @@ if (isset($_POST["btDangnhap"])) {
                 <div class="mb-3">
                     <div class="d-flex justify-content-between">
                         <label class="form-label">Password</label>
-                        <a href="laylaimk.php" class="btn-link ml-auto">Forgot password?</a>
+                        <a href="laylaimk.php" class="btn-link ml-auto">Quên mật khẩu?</a>
                     </div>
                     <input type="password" class="form-control" name="password">
                 </div>
-                <div class="login-form-actions">
-                    <input type="submit" value="Đăng nhập" id="btn-dangNhap" name="btDangnhap">
+                <div class="login-form-actions mr-3">
+                    <input type="submit" value="Đăng nhập" id="btn-dangNhap" name="btDangnhap" class="btn-success me-2">
+                    <input type="button" value="Hủy" class="btn-secondary" onclick="confirmExit()">
                 </div>
-                <div class="login-form-actions">
-                    <button type="submit" class="btn"> <img src="assets/images/google.svg" class="login-icon"
-                            alt="Login with Google">
-                        Login with Google</button>
-                    <button type="submit" class="btn"> <img src="assets/images/facebook.svg" class="login-icon"
-                            alt="Login with Facebook">
-                        Login with Facebook</button>
-                </div>
-                <div class="login-form-footer">
-                    <div class="additional-link">
-                        Don't have an account? <a href="signup.html"> Signup</a>
-                    </div>
-                </div>
+
+                <script>
+                function confirmExit() {
+                    const confirmMessage = "Bạn muốn rời trang?";
+                    if (confirm(confirmMessage)) {
+                        window.location.href = "../User/index.html"; // Điều hướng đến trang khác
+                    }
+                }
+                </script>
+
+
             </div>
         </div>
     </form>

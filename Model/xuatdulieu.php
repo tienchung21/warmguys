@@ -34,7 +34,9 @@ class database{
     }
     public function danhsachtheodoi()
     {
-            $sql="select * from theodoitapluyen ";
+        $sql = "SELECT theodoitapluyen.*, thanhvien.* 
+        FROM theodoitapluyen 
+        JOIN thanhvien ON theodoitapluyen.MaTV = thanhvien.MaTV";
         return $this->xuatdulieu($sql);
     }
     public function danhsachtaikhoan()

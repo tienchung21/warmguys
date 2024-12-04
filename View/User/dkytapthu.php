@@ -1,3 +1,9 @@
+<?php
+include_once('../../model/quanlytapthu.php');
+
+
+include('../../Controller/cdkytapthu.php');
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -24,6 +30,65 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+    .form-container {
+        max-width: 600px;
+        padding: 20px;
+        border-radius: 8px;
+        margin: auto;
+        background-size: cover;
+        color: beige;
+        font-size: 20px;
+
+    }
+
+    section {
+        color: black;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    section[id="idCars"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .form-buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-submit {
+        background-color: #4CAF50;
+        color: white;
+        width: 200px;
+        height: 60px;
+    }
+
+    .btn-cancel {
+        background-color: #f44336;
+        color: white;
+        width: 200px;
+        height: 60px;
+    }
+    </style>
 </head>
 
 <body class="black-bg">
@@ -65,16 +130,15 @@
                                             <li><a href="elements.html">Yếu tố</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.php
-">Liên hệ</a></li>
+                                    <li><a href="contact.html">Liên hệ</a></li>
                                     <li><a href="../Admin/index.php">quản lý</a></li>
                                 </ul>
                             </nav>
                         </div>
-                        <!-- Header-btn -->
                         <div class="header-btns d-none d-lg-block f-right">
-                            <a href="dkytapthu.php" class="btn">Đăng Kí Tập Thử</a>
+                            <a href="dkytapthu.html" class="btn">Đăng Kí Tập Thử</a>
                         </div>
+                        <!-- Header-btn -->
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -93,93 +157,61 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 pt-70">
-                                <h2>Khuyến mãi mới nhất</h2>
+                                <h2>Đăng Ký Tập Thử
+                                </h2>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Hero End -->
-        <!--? Gallery Area Start -->
-        <div class="gallery-area">
-            <div class="container-fluid ">
-                <div class="row">
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                        <div class="box snake mb-30">
-                            <div class="gallery-img big-img" style="background-image: url(assets/img/gallery/newbie.png);"></div>
-                            <div class="overlay">
-                                <div class="overlay-content">
-                                    <h3>Thẻ tập thành viên mới</h3>
-                                    <a href="gallery.html"><i class="ti-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-8 col-lg-6 col-md-6 col-sm-6">
-                        <div class="box snake mb-30">
-                            <h1 style="color: white; text-align: center;">Khuyến mãi thành viên mới</h1>
-                            <div class="Content;">
-                                <p style="color: white;"><br>Bạn đang tìm kiếm một nơi để khởi đầu hành trình rèn luyện sức khỏe và cải thiện vóc dáng?<br> 
-                                    Phòng tập WarmGuys chính là lựa chọn hoàn hảo dành cho bạn!<br><br>
-
-                                    Để chào đón các thành viên mới, WarmGuys mang đến chương trình khuyến mãi siêu hấp dẫn:<br>
-                                    <br>
-                                    - Tặng ngay 20% giảm giá khi đăng ký gói tập từ 3 tháng trở lên.<br>
-                                    - Tặng kèm 2 buổi tập cùng huấn luyện viên cá nhân (PT) để bạn làm quen và xây dựng lộ trình tập luyện phù hợp.<br>
-                                    - Miễn phí 1 tháng sử dụng phòng xông hơi giúp thư giãn sau những giờ tập luyện.<br>
-                                    - Đặc biệt, phòng tập WarmGuys được trang bị đầy đủ thiết bị hiện đại, không gian tập luyện thoáng mát, cùng đội ngũ PT chuyên nghiệp, tận tâm.<br>
-                                    <br>
-                                    Nhanh tay đăng ký hôm nay để không bỏ lỡ cơ hội nâng cao sức khỏe với ưu đãi đặc biệt này! Hãy để WarmGuys đồng hành cùng bạn trên hành trình chinh phục mục tiêu thể hình. 🌟</p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="form-container">
+            <form method="post" id="registrationForm">
+                <div class="form-group">
+                    <label for="name">Họ Tên:</label>
+                    <input type="text" name="name" required pattern="^[a-zA-Z\s]+$" placeholder="Nhập họ và tên"
+                        title="Họ tên không hợp lệ, vui lòng nhập lại.">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại:</label>
+                    <input type="tel" name="phone" required pattern="^\d{10,11}$" placeholder="Nhập số điện thoại"
+                        title="Số điện thoại không hợp lệ, vui lòng nhập lại.">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" required placeholder="Nhập email"
+                        title="Email không hợp lệ, vui lòng nhập lại.">
+                </div>
+                <div class="form-group">
+                    <label for="idCard">Căn Cước:</label>
+                    <input type="text" name="idCard" required pattern="^\d{9,12}$" placeholder="Nhập CCCD"
+                        title="Căn cước không hợp lệ, vui lòng nhập lại.">
+                </div>
+                <div class="form-group">
+                    <label>Khung giờ gọi cho bạn:</label>
+                    <select class="form-group" name="Thoigianlienlac" placeholder="Chọn khung giờ">
+                        <option value="9:00 AM - 12:00 PM">9:00 AM - 12:00 PM</option>
+                        <option value="12:00 PM - 2:00 PM">12:00 PM - 2:00 PM</option>
+                        <option value="2:00 PM - 5:00 PM">2:00 PM - 5:00 PM</option>
+                        <option value="5:00 PM - 10:00 PM">5:00 PM - 10:00 PM</option>
+                    </select>
+                </div>
+                <br> <br>
+                <div class="form-buttons">
+                    <button type="submit" name="dkytap" class="btn btn-submit">Xác nhận</button>
+                    <button type="button" class="btn btn-cancel" onclick="cancelForm()">Hủy</button>
+                </div>
+
+            </form>
         </div>
-        <!-- Gallery Area End -->
-        <!-- ? services-area -->
-        <section class="services-area">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
-                        <div class="single-services mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
-                            <div class="features-icon">
-                                <i class="ti-location-pin"></i>
-                            </div>
-                            <div class="features-caption">
-                                <h3>Location</h3>
-                                <p>12 Nguyen Van Bao streets </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-                        <div class="single-services mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                            <div class="features-icon">
-                                <i class="ti-tablet"></i>
-                            </div>
-                            <div class="features-caption">
-                                <h3>Phone</h3>
-                                <p>(84) 349 195 620</p>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-                        <div class="single-services mb-40 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
-                            <div class="features-icon">
-                                <i class="ti-email"></i>
-                            </div>
-                            <div class="features-caption">
-                                <h3>Email</h3>
-                                <p>chung9atm@gmail.com</p>
-                                <p>chung10atm@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <script>
+        function cancelForm() {
+            document.getElementById("registrationForm").reset();
+            alert("Đã hủy đăng ký");
+        }
+        </script>
+
     </main>
     <footer>
         <!--? Footer Start-->
@@ -191,23 +223,18 @@
                         <div class="col-xl-12">
                             <div class="single-footer-caption mb-50 text-center">
                                 <!-- logo -->
-                
+                                <div class="footer-logo wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                                </div>
                                 <!-- Menu -->
                                 <!-- Header Start -->
-                                <div class="header-area main-header2 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
+                                <div class="header-area main-header2 wow fadeInUp" data-wow-duration="2s"
+                                    data-wow-delay=".4s">
                                     <div class="main-header main-header2">
                                         <div class="menu-wrapper menu-wrapper2">
                                             <!-- Main-menu -->
                                             <div class="main-menu main-menu2 text-center">
                                                 <nav>
                                                     <ul>
-                                                        <li><a href="index.html">Home</a></li>
-                                                        <li><a href="about.html">About</a></li>
-                                                        <li><a href="courses.html">Courses</a></li>
-                                                        <li><a href="pricing.html">Pricing</a></li>
-                                                        <li><a href="gallery.html">Gallery</a></li>
-                                                        <li><a href="contact.php
-">Contact</a></li>
                                                     </ul>
                                                 </nav>
                                             </div>
@@ -216,7 +243,8 @@
                                 </div>
                                 <!-- Header End -->
                                 <!-- social -->
-                                <div class="footer-social mt-30 wow fadeInUp" data-wow-duration="3s" data-wow-delay=".8s">
+                                <div class="footer-social mt-30 wow fadeInUp" data-wow-duration="3s"
+                                    data-wow-delay=".8s">
                                     <a href="#"><i class="fab fa-twitter"></i></a>
                                     <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
                                     <a href="#"><i class="fab fa-pinterest-p"></i></a>
@@ -234,8 +262,10 @@
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                     Copyright &copy;
                                     <script>
-                                        document.write(new Date().getFullYear());
-                                    </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    document.write(new Date().getFullYear());
+                                    </script> All rights reserved | This template is made with <i class="fa fa-heart"
+                                        aria-hidden="true"></i> by <a href="https://colorlib.com"
+                                        target="_blank">Colorlib</a>
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 </p>
                             </div>

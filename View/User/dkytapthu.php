@@ -31,57 +31,63 @@ include('../../Controller/cdkytapthu.php');
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        .form-container {
-            max-width: 600px;
-            padding: 20px;
-            border-radius: 8px;
-            margin: auto;
-            background-size: cover;
-            color: beige;
-            font-size: 20px;
+    .form-container {
+        max-width: 600px;
+        padding: 20px;
+        border-radius: 8px;
+        margin: auto;
+        background-size: cover;
+        color: beige;
+        font-size: 20px;
 
-        }
-        section{
-            color: black;
-        }
-        h2 {
-            text-align: center;
-        }
+    }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    section {
+        color: black;
+    }
 
-        label {
-            display: block;
-            font-weight: bold;
-        }
-        input[type="text"], input[type="tel"], input[type="email"], section[id="idCars"] {  
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+    h2 {
+        text-align: center;
+    }
 
-        .form-buttons {
-            display: flex;
-            justify-content: space-between;
-        }
+    .form-group {
+        margin-bottom: 15px;
+    }
 
-        .btn-submit {
-            background-color: #4CAF50;
-            color: white;
-            width: 200px;
-            height: 60px;
-        }
+    label {
+        display: block;
+        font-weight: bold;
+    }
 
-        .btn-cancel {
-            background-color: #f44336;
-            color: white;
-            width: 200px;
-            height: 60px;
-        }
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    section[id="idCars"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .form-buttons {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .btn-submit {
+        background-color: #4CAF50;
+        color: white;
+        width: 200px;
+        height: 60px;
+    }
+
+    .btn-cancel {
+        background-color: #f44336;
+        color: white;
+        width: 200px;
+        height: 60px;
+    }
     </style>
 </head>
 
@@ -124,13 +130,14 @@ include('../../Controller/cdkytapthu.php');
                                             <li><a href="elements.html">Yếu tố</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html">Liên hệ</a></li>
+                                    <li><a href="contact.php
+">Liên hệ</a></li>
                                     <li><a href="../Admin/index.php">quản lý</a></li>
                                 </ul>
                             </nav>
                         </div>
                         <div class="header-btns d-none d-lg-block f-right">
-                            
+
                         </div>
                         <!-- Header-btn -->
                         <!-- Mobile Menu -->
@@ -163,43 +170,47 @@ include('../../Controller/cdkytapthu.php');
             <form method="post" id="registrationForm">
                 <div class="form-group">
                     <label for="name">Họ Tên:</label>
-                    <input type="text" name="name" required pattern="^[a-zA-Z\s]+$" placeholder="Nhập họ và tên" title="Họ tên không hợp lệ, vui lòng nhập lại.">
+                    <input type="text" name="name" required pattern="^[a-zA-Z\s]+$" placeholder="Nhập họ và tên"
+                        title="Họ tên không hợp lệ, vui lòng nhập lại.">
                 </div>
                 <div class="form-group">
                     <label for="phone">Số điện thoại:</label>
-                    <input type="tel"  name="phone" required pattern="^\d{10,11}$" placeholder="Nhập số điện thoại" title="Số điện thoại không hợp lệ, vui lòng nhập lại.">
+                    <input type="tel" name="phone" required pattern="^\d{10,11}$" placeholder="Nhập số điện thoại"
+                        title="Số điện thoại không hợp lệ, vui lòng nhập lại.">
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email"  name="email" required placeholder="Nhập email" title="Email không hợp lệ, vui lòng nhập lại.">
+                    <input type="email" name="email" required placeholder="Nhập email"
+                        title="Email không hợp lệ, vui lòng nhập lại.">
                 </div>
                 <div class="form-group">
                     <label for="idCard">Căn Cước:</label>
-                    <input type="text"  name="idCard" required pattern="^\d{9,12}$" placeholder="Nhập CCCD" title="Căn cước không hợp lệ, vui lòng nhập lại.">
+                    <input type="text" name="idCard" required pattern="^\d{9,12}$" placeholder="Nhập CCCD"
+                        title="Căn cước không hợp lệ, vui lòng nhập lại.">
                 </div>
                 <div class="form-group">
-                    <label >Khung giờ gọi cho bạn:</label>
-                    <select class="form-group"  name="Thoigianlienlac" placeholder="Chọn khung giờ">
+                    <label>Khung giờ gọi cho bạn:</label>
+                    <select class="form-group" name="Thoigianlienlac" placeholder="Chọn khung giờ">
                         <option value="9:00 AM - 12:00 PM">9:00 AM - 12:00 PM</option>
                         <option value="12:00 PM - 2:00 PM">12:00 PM - 2:00 PM</option>
                         <option value="2:00 PM - 5:00 PM">2:00 PM - 5:00 PM</option>
                         <option value="5:00 PM - 10:00 PM">5:00 PM - 10:00 PM</option>
-                      </select>
+                    </select>
                 </div>
                 <br> <br>
                 <div class="form-buttons">
                     <button type="submit" name="dkytap" class="btn btn-submit">Xác nhận</button>
                     <button type="button" class="btn btn-cancel" onclick="cancelForm()">Hủy</button>
                 </div>
-                
+
             </form>
         </div>
 
         <script>
-            function cancelForm() {
-                document.getElementById("registrationForm").reset();
-                alert("Đã hủy đăng ký");
-            }
+        function cancelForm() {
+            document.getElementById("registrationForm").reset();
+            alert("Đã hủy đăng ký");
+        }
         </script>
 
     </main>
@@ -252,7 +263,7 @@ include('../../Controller/cdkytapthu.php');
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                     Copyright &copy;
                                     <script>
-                                        document.write(new Date().getFullYear());
+                                    document.write(new Date().getFullYear());
                                     </script> All rights reserved | This template is made with <i class="fa fa-heart"
                                         aria-hidden="true"></i> by <a href="https://colorlib.com"
                                         target="_blank">Colorlib</a>

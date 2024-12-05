@@ -60,15 +60,13 @@
                                         <li><a href="elements.html">Yếu tố</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.html">Liên hệ</a></li>
-                                <li><a href="../Admin/index.php">quản lý</a></li>
+                                <li><a href="contact.php">Liên hệ</a></li>
                             </ul>
                         </nav>
                     </div>
                     <!-- Header-btn -->
                     <div class="header-btns d-none d-lg-block f-right">
-                        <a href="dkytapthu.php" class="btn">Đăng Kí Tập Thử</a>
-                        
+                        <a href="contact.html" class="btn">Contact me</a>
                     </div>
                     <!-- Mobile Menu -->
                     <div class="col-12">

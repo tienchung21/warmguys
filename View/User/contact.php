@@ -61,6 +61,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="contact.php">Liên hệ</a></li>
+                                <li><a href="danhgia.php">Đánh giá từ khách hàng</a></li>
                             </ul>
                         </nav>
                     </div>

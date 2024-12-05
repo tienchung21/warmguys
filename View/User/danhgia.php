@@ -1,4 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<?php 
+        session_start();
+        ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -65,15 +78,14 @@
                                             <li><a href="elements.html">Yếu tố</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html">Liên hệ</a></li>
-                                    <li><a href="danhgia.php">Đánh giá từ khách hàng</a></li>
+                                    <li><a href="contact.php">Liên hệ</a></li>
                                     <li><a href="../Admin/index.php">quản lý</a></li>
                                 </ul>
                             </nav>
                         </div>
                         <!-- Header-btn -->
                         <div class="header-btns d-none d-lg-block f-right">
-                            <a href="dkytapthu.html" class="btn">Đăng Kí Tập Thử</a>
+                            <a href="dkytapthu.php" class="btn">Đăng Kí Tập Thử</a>
                         </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">
@@ -93,7 +105,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 pt-70">
-                                <h2>Pricing</h2>
+                                <h2>Đánh Giá từ khách hàng</h2>
                             </div>
                         </div>
                     </div>
@@ -101,183 +113,50 @@
             </div>
         </div>
         <!-- Hero End -->
-        <!-- Courses area start -->
-        <section class="pricing-area section-padding30 fix">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="section-tittle text-center mb-55">
-                            <h2>Pricing</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="properties mb-30">
-                            <div class="properties__card">
-                                <div class="about-icon">
-                                    <img src="assets/img/icon/price.svg" alt="">
+        <!--? Gallery Area Start -->
+        <div class="gallery-area">
+       
+        <?php
+                include('../../Model/xuatdulieu.php');
+					$obj = new database();
+
+					$danhgia = $obj->danhsachdanhgia();
+
+					// xử lý
+					// thêm
+					
+                  ?>
+        <div class="comments-area">
+                            <h4 class="text-white">Comments</h4>
+                            <div class="comment-list">
+                            <?php foreach ($danhgia as $item): ?>
+                                <div class="single-comment justify-content-between d-flex mt-40">
+                                
+                                    <div class="user justify-content-between d-flex">
+                                        <div class="thumb">
+                                            <img src="assets/img/comment/comment_1.png" alt="">
+                                        </div>
+                                        <div class="desc">
+                                            <p class="comment text-white">
+                                            <?= $item["NoiDung"] ?>
+                                            </p>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="d-flex align-items-center ">
+                                                    <h5>
+                                                        <a href="#" class="text-danger"><?= $item["TenTV"] ?></a>
+                                                    </h5>
+                                                    <p class="date text-white"><?= $item["Date"] ?></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
                                 </div>
-                                <div class="properties__caption">
-                                    <span class="month">6 month</span>
-                                    <p class="mb-25">$30/m <span>(Single class)</span></p>
-                                    <div class="single-features">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Free riding </p>
-                                        </div>
-                                    </div>
-                                    <div class="single-features">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Unlimited equipments</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-features">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Personal trainer</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-features">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Weight losing classes</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-features mb-20">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Month to mouth</p>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="border-btn border-btn2">Join Now</a>
-                                </div>
+                                <?php endforeach; ?>    
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="properties mb-30">
-                            <div class="properties__card">
-                                <div class="about-icon">
-                                    <img src="assets/img/icon/price.svg" alt="">
-                                </div>
-                                <div class="properties__caption">
-                                    <span class="month">6 month</span>
-                                    <p class="mb-25">$30/m <span>(Single class)</span></p>
-                                    <div class="single-features">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Free riding </p>
-                                        </div>
-                                    </div>
-                                    <div class="single-features">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Unlimited equipments</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-features">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Personal trainer</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-features">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Weight losing classes</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-features mb-20">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Month to mouth</p>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="border-btn border-btn2">Join Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="properties mb-30">
-                            <div class="properties__card">
-                                <div class="about-icon">
-                                    <img src="assets/img/icon/price.svg" alt="">
-                                </div>
-                                <div class="properties__caption">
-                                    <span class="month">6 month</span>
-                                    <p class="mb-25">$30/m <span>(Single class)</span></p>
-                                    <div class="single-features">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Free riding </p>
-                                        </div>
-                                    </div>
-                                    <div class="single-features">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Unlimited equipments</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-features">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Personal trainer</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-features">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Weight losing classes</p>
-                                        </div>
-                                    </div>
-                                    <div class="single-features mb-20">
-                                        <div class="features-icon">
-                                            <img src="assets/img/icon/check.svg" alt="">
-                                        </div>
-                                        <div class="features-caption">
-                                            <p>Month to mouth</p>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="border-btn border-btn2">Join Now</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Courses area End -->
+        </div>
+        <!-- Gallery Area End -->
         <!-- ? services-area -->
         <section class="services-area">
             <div class="container">
@@ -331,13 +210,10 @@
                         <div class="col-xl-12">
                             <div class="single-footer-caption mb-50 text-center">
                                 <!-- logo -->
-                                <div class="footer-logo wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
-                                </div>
+                
                                 <!-- Menu -->
                                 <!-- Header Start -->
-                                <div class="header-area main-header2 wow fadeInUp" data-wow-duration="2s"
-                                    data-wow-delay=".4s">
+                                <div class="header-area main-header2 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
                                     <div class="main-header main-header2">
                                         <div class="menu-wrapper menu-wrapper2">
                                             <!-- Main-menu -->
@@ -349,8 +225,7 @@
                                                         <li><a href="courses.html">Courses</a></li>
                                                         <li><a href="pricing.html">Pricing</a></li>
                                                         <li><a href="gallery.html">Gallery</a></li>
-                                                        <li><a href="contact.php
-">Contact</a></li>
+                                                        <li><a href="contact.php">Contact</a></li>
                                                     </ul>
                                                 </nav>
                                             </div>
@@ -359,8 +234,7 @@
                                 </div>
                                 <!-- Header End -->
                                 <!-- social -->
-                                <div class="footer-social mt-30 wow fadeInUp" data-wow-duration="3s"
-                                    data-wow-delay=".8s">
+                                <div class="footer-social mt-30 wow fadeInUp" data-wow-duration="3s" data-wow-delay=".8s">
                                     <a href="#"><i class="fab fa-twitter"></i></a>
                                     <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
                                     <a href="#"><i class="fab fa-pinterest-p"></i></a>
@@ -379,9 +253,7 @@
                                     Copyright &copy;
                                     <script>
                                         document.write(new Date().getFullYear());
-                                    </script> All rights reserved | This template is made with <i class="fa fa-heart"
-                                        aria-hidden="true"></i> by <a href="https://colorlib.com"
-                                        target="_blank">Colorlib</a>
+                                    </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 </p>
                             </div>

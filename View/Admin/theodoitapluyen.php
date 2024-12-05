@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <?php session_start();
-$idSua = 1;
 ?>
 
 <head>

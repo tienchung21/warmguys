@@ -10,10 +10,17 @@
     <div class="sidebar-menu">
         <div class="sidebarMenuScroll">
             <ul>
-                <li class="sidebar-dropdown active">
+                <li class="sidebar-dropdown ">
                     <a href="quanlithanhvien.php">
                         <i class="bi bi-person"></i>
                         <span class="menu-text">Quản lí thành viên</span>
+                    </a>
+
+                </li>
+                <li class="sidebar-dropdown">
+                    <a href="dstapthu.php">
+                        <i class="bi bi-person"></i>
+                        <span class="menu-text">Quản lí KH tập thử</span>
                     </a>
 
                 </li>

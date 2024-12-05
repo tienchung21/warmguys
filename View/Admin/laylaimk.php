@@ -22,9 +22,7 @@
     <div class="page-wrapper">
 
         <!-- Sidebar wrapper start -->
-        <?php
-        include('sidebar.php');
-        ?>
+       
         <!-- Sidebar wrapper end -->
 
         <div class="main-container">
@@ -49,13 +47,15 @@ $taikhoan = $obj->danhsachtaikhoan(); // Lấy danh sách tài khoản
                 <?php endif; ?> -->
          
 <form method="post" action="guimail_.php" class="col-6 m-auto border border-primary p-2">
-<p>email
+<p>Nhập email tài khoản của bạn
    <input name="guiden" class="form-control bg-info">
 </p>
 <!-- <p>Nội dung 
    <textarea name="noidung" hi class="form-control bg-info"></textarea> </p>
 <p>  -->
-  <button type="submit" class="btn btn-primary" >Gửi mật khẩu</button></p>
+  <button type="submit" class="btn btn-primary" >Gửi mật khẩu</button>
+  <a href="login.php" >quay lại</a></p>
+  
 </form>
         </div>
     </div>

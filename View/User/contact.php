@@ -1,3 +1,6 @@
+<?php
+include('../../Controller/cquanlyphanhoidd.php');
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -60,13 +63,16 @@
                                         <li><a href="elements.html">Yếu tố</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="contact.php">Liên hệ</a></li>
+                                <li><a href="contact.php
+">Liên hệ</a></li>
+                                <li><a href="../Admin/index.php">quản lý</a></li>
                             </ul>
                         </nav>
                     </div>
                     <!-- Header-btn -->
                     <div class="header-btns d-none d-lg-block f-right">
-                        <a href="contact.html" class="btn">Contact me</a>
+                        <a href="dkytapthu.php" class="btn">Đăng Kí Tập Thử</a>
+
                     </div>
                     <!-- Mobile Menu -->
                     <div class="col-12">
@@ -96,53 +102,60 @@
     <!-- Hero End -->
     <!--?  Contact Area start  -->
     <div class="container">
-        <h1>Hãy phản hồi để chúng tôi có thể phục vụ cho bạn thật tốt !!</h1>
-        <div class="row">
-            <!-- SĐT -->
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <label for="phone" class="form-label">Số điện thoại</label>
-                    <input type="text" class="form-control" id="phone" placeholder="Nhập số điện thoại" required>
+        <div class="container">
+            <h1>Hãy phản hồi để chúng tôi có thể phục vụ cho bạn thật tốt !!</h1>
+            <!-- Thêm thẻ form -->
+            <form action="" method="post">
+                <div class="row">
+                    <!-- SĐT -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Số điện thoại</label>
+                            <input type="text" class="form-control" id="phone" name="phone"
+                                placeholder="Nhập số điện thoại" required>
+                        </div>
+                    </div>
+                    <!-- Tên khách hàng -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="customerName" class="form-label">Tên khách hàng</label>
+                            <input type="text" class="form-control" id="customerName" name="customerName"
+                                placeholder="Nhập tên khách hàng" required>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <!-- Tên khách hàng -->
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <label for="customerName" class="form-label">Tên khách hàng</label>
-                    <input type="text" class="form-control" id="customerName" placeholder="Nhập tên khách hàng"
-                        required>
+
+                <div class="row">
+                    <!-- Email -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Nhập email"
+                                required>
+                        </div>
+                    </div>
+                    <!-- Mã thành viên -->
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label for="memberId" class="form-label">Mã thành viên(Nếu có)</label>
+                            <input type="text" class="form-control" id="memberId" name="memberId"
+                                placeholder="Nhập mã thành viên" required>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <!-- Nội dung phản hồi -->
+                <div class="mb-3">
+                    <label for="feedback" class="form-label">Nội dung phản hồi</label>
+                    <textarea class="form-control" id="feedback" name="feedback" rows="4"
+                        placeholder="Nhập nội dung phản hồi" required></textarea>
+                </div>
+
+                <!-- Nút gửi -->
+                <button type="submit" class="btn btn-primary" name="btThem">Gửi Phản Hồi</button>
+            </form>
         </div>
 
-        <div class="row">
-            <!-- Email -->
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Nhập email" required>
-                </div>
-            </div>
-            <!-- Mã thành viên -->
-            <div class="col-md-6">
-                <div class="mb-3">
-                    <label for="memberId" class="form-label">Mã thành viên</label>
-                    <input type="text" class="form-control" id="memberId" placeholder="Nhập mã thành viên" required>
-                </div>
-            </div>
-        </div>
-
-        <!-- Nội dung phản hồi -->
-        <div class="mb-3">
-            <label for="feedback" class="form-label">Nội dung phản hồi</label>
-            <textarea class="form-control" id="feedback" rows="4" placeholder="Nhập nội dung phản hồi"
-                required></textarea>
-        </div>
-
-        <!-- Nút gửi -->
-        <button type="submit" class="btn btn-primary">Gửi Phản Hồi</button>
-        </form>
-    </div>
 
     </div>
     <!-- Contact Area End -->
@@ -217,7 +230,8 @@
                                                     <li><a href="courses.html">Courses</a></li>
                                                     <li><a href="pricing.html">Pricing</a></li>
                                                     <li><a href="gallery.html">Gallery</a></li>
-                                                    <li><a href="contact.html">Contact</a></li>
+                                                    <li><a href="contact.php
+">Contact</a></li>
                                                 </ul>
                                             </nav>
                                         </div>
@@ -244,7 +258,7 @@
                                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 Copyright &copy;
                                 <script>
-                                    document.write(new Date().getFullYear());
+                                document.write(new Date().getFullYear());
                                 </script> All rights reserved | This template is made with <i class="fa fa-heart"
                                     aria-hidden="true"></i> by <a href="https://colorlib.com"
                                     target="_blank">Colorlib</a>

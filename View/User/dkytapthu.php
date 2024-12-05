@@ -131,6 +131,7 @@ include('../../Controller/cdkytapthu.php');
                                         </ul>
                                     </li>
                                     <li><a href="contact.html">Liên hệ</a></li>
+                                    <li><a href="danhgia.php">Đánh giá từ khách hàng</a></li>
                                     <li><a href="../Admin/index.php">quản lý</a></li>
                                 </ul>
                             </nav>

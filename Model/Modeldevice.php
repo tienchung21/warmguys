@@ -38,7 +38,7 @@ class deviceQL extends connect_database{
         return $this->tuychinh($sql_delete); // Thực hiện câu lệnh xóa
     }
 
-    public function Capnhatthietbi($idtb, $tenTB, $loaiTB, $tinhtrang, $hinhanh)
+    public function Capnhatthietbi($idtb, $tenTB, $loaiTB, $tinhtrang, $hinhanh = "")
 {
     // Kiểm tra và xử lý hình ảnh nếu có
     $sql_update = "UPDATE thietbi SET TenTB = '$tenTB', LoaiTB = '$loaiTB', TinhTrangTB = '$tinhtrang'";
@@ -70,6 +70,8 @@ class deviceQL extends connect_database{
     $sql_update .= " WHERE MaTB = $idtb";
     return $this->tuychinh($sql_update); // Thực thi câu lệnh cập nhật
 }
-
+    public function chitietghinhan($sql){
+        $sql = "";
+    }
 }
 ?>

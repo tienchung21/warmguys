@@ -3,7 +3,7 @@ class connect_database
 {
     public function connect()
     {
-        $conn= new mysqli("localhost","root","","warmguys");
+        $conn= new mysqli("localhost","root","","warmguyss");
         if($conn->connect_errno)
         {
             echo"<script>Alert('Ket noi khong thanh cong')</script>";
@@ -15,12 +15,12 @@ class connect_database
     public function dangnhaptaikhoan($username, $password)
     {
         //$password=md5($password);
-        $sql = "SELECT ID FROM taikhoan WHERE Username = '$username' AND Password = '$password'";
+        $sql = "SELECT * FROM taikhoan WHERE Username = '$username' AND Password = '$password'";
         $link = $this->connect();
         $result = $link->query($sql);
         if ($result->num_rows) {
             $row = $result->fetch_assoc();
-            return $row["ID"];
+            return $row;
         } else
             return 0;
     }
@@ -29,6 +29,7 @@ class connect_database
         $arr=array();
         $link=$this->connect();
         $result=$link->query($sql);
+
         if($result->num_rows)
         {
             while($row=$result->fetch_assoc())

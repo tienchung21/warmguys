@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 <?php session_start();
-$idSua = 1;
 ?>
 
 <head>
@@ -100,12 +99,12 @@ $idSua = 1;
 					// xử lý
 					// thêm
 					if (isset($_POST["btThem"])) {
-						$thanhVienMaTV = $_POST["thanhVienMaTV"];
+						$MaTV = $_POST["MaTV"];
 						$NgayTap = $_POST["NgayTap"];
 						$GioVao = $_POST["GioVao"];
-						$sql = "insert into theodoitapluyen(thanhVienMaTV,NgayTap,GioVao) values ('$thanhVienMaTV','$NgayTap','$GioVao')";
+						$sql = "insert into theodoitapluyen(MaTV,NgayTap,GioVao) values ('$MaTV','$NgayTap','$GioVao')";
 						if ($obj->themsanpham($sql))
-							echo "<script>alert('Them thanh cong');window.location.href = 'theodoitapluyen.php';</script>";
+							echo "<script>alert('ghi nhận thành công');window.location.href = 'theodoitapluyen.php';</script>";
 						else
 							echo "Them that bai";
 					}
@@ -116,10 +115,12 @@ $idSua = 1;
 							<form method="post">
 								<table class="table m-0">
 									<thead>
-									<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#momodalthem">Điểm danh</button>
+									<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#momodalthem">Ghi nhận lịch sử tập</button>
 										<tr>
                                             <th>ID</th>
 											<th>Mã Thành Viên</th>
+											<th>Tên Viên</th>
+											<th>Số điện thoại</th>
 											<th>Ngày tập</th>
 											<th>giờ vào</th>
 							
@@ -131,7 +132,9 @@ $idSua = 1;
 										<?php foreach ($thanhvien as $item): ?>
 											<tr>
 												<td><?= $item["ID"] ?></td>
-												<td><?= $item["thanhVienMaTV"] ?></td>
+												<td><?= $item["MaTV"] ?></td>
+												<td><?= $item["TenTV"] ?></td>
+												<td><?= $item["SoDTTV"] ?></td>
 												<td><?= $item["NgayTap"] ?></td>
 												<td><?= $item["GioVao"] ?></td>
 											<?php endforeach; ?>
@@ -157,7 +160,7 @@ $idSua = 1;
 										<input type="hidden" name="MaTV" id="editMaTV">
 										<div class="mb-3">
 											<label for="editTenTV" class="form-label">Mã Thành Viên</label>
-											<input type="text" class="form-control" name="thanhVienMaTV" id="editTenTV"
+											<input type="text" class="form-control" name="MaTV" id="editTenTV"
 												required>
 										</div>
                                         <div class="mb-3">

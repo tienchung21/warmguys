@@ -32,9 +32,17 @@ class database{
             $sql="select * from thanhvien ";
         return $this->xuatdulieu($sql);
     }
+    public function danhsachdanhgia()
+    {
+            $sql="SELECT 
+            phanhoi.*, thanhvien.* from phanhoi JOIN thanhvien ON phanhoi.MaTV = thanhvien.MaTV where TrangThaiPH='daduyet' ";
+        return $this->xuatdulieu($sql);
+    }
     public function danhsachtheodoi()
     {
-            $sql="select * from theodoitapluyen ";
+        $sql = "SELECT theodoitapluyen.*, thanhvien.* 
+        FROM theodoitapluyen 
+        JOIN thanhvien ON theodoitapluyen.MaTV = thanhvien.MaTV";
         return $this->xuatdulieu($sql);
     }
     public function danhsachtaikhoan()

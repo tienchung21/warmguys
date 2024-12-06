@@ -178,15 +178,15 @@ $idSua = 1;
 						$GioiTinh1 = $_POST["GioiTinh1"];
 						$sql = "insert into thanhvien(TenTV,SoDTTV,EmailTV,DiaChiTV,GioiTinh) values ('$TenTV1','$SoDTTV1','$EmailTV1','$DiaChiTV1','$GioiTinh1')";
 						if ($obj->themsanpham($sql))
-							echo "<script>alert('Them thanh cong');window.location.href = 'quanlithanhvien.php';</script>";
+							echo "<script>alert('Thêm thành công');window.location.href = 'quanlithanhvien.php';</script>";
 						else
-							echo "Them that bai";
+							echo "Thêm thất bại";
 					}
 					// xóa
 					if (isset($_POST["btXoa"])) {
 						$MaTV = $_POST["btXoa"];
 						if ($obj->xoathanhvien($MaTV))
-							echo "<script>alert('Xoa thanh cong');window.location.href = 'quanlithanhvien.php';</script>";
+							echo "<script>alert('Xóa thành công');window.location.href = 'quanlithanhvien.php';</script>";
 						else
 							echo "xoa that bai";
 					}
@@ -200,7 +200,7 @@ $idSua = 1;
 						$GioiTinh = $_POST["GioiTinh"];
 						$sql = "update thanhvien set TenTV='$TenTV',SoDTTV='$SoDTTV',EmailTV='$EmailTV',DiaChiTV='$DiaChiTV',GioiTinh='$GioiTinh' where MaTV=$MaTV";
 						if ($obj->suathanhvien($sql)) {
-							echo "<script>alert('Sua thanh cong');window.location.href = 'quanlithanhvien.php';</script>";
+							echo "<script>alert('Sửa thành công');window.location.href = 'quanlithanhvien.php';</script>";
 						} else
 							echo "Sua that bai";
 					}
@@ -224,8 +224,7 @@ $idSua = 1;
 											<th>Email</th>
 											<th>Địa Chỉ</th>
 											<th>Giới Tính </th>
-											<th>xóa</th>
-											<th>sửa</th>
+											<th>tùy chỉnh</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -242,12 +241,9 @@ $idSua = 1;
 													<button
 														onclick="return confirm('Bạn có chắc chắn muốn xóa danh mục này không?')"
 														type="submit" name="btXoa" value="<?= $item["MaTV"] ?>"
-														class="btn btn-danger">Xóa</button>
-
-												</td>
-
-												<td>
-													<button type="button" class="btn btn-warning" data-toggle="modal"
+														class="btn btn-outline-danger">Xóa</button>
+<!-- sửa -->
+													<button type="button" class="btn btn-outline-success" data-toggle="modal"
 														data-target="#editCategoryModal" onclick="document.getElementById('editMaTV').value='<?= $item['MaTV'] ?>'; 
                                                               document.getElementById('editTenTV').value='<?= $item['TenTV'] ?>'; 
                                                               document.getElementById('editSoDTTV').value='<?= $item['SoDTTV'] ?>';
@@ -330,7 +326,7 @@ $idSua = 1;
 					<form method="POST" id="editCategoryForm">
 								<div class="modal-content">
 									<div class="modal-header">
-										<h3 class="modal-title text-center">THEM THÀNH VIÊN</h3>
+										<h3 class="modal-title text-center">THÊM THÀNH VIÊN</h3>
 										<button type="button" class="btn-close" data-dismiss="modal"
 											aria-label="Close"></button>
 									</div>

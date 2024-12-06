@@ -14,6 +14,10 @@ class phanhoidd extends connect_database{
         $sql="delete from phanhoi where MaPH=$maph";
         return $this->tuychinh($sql);
     }
+    public function themphanhoi($sql)
+    {
+        return $this->tuychinh($sql);
+    }
 }
 
 ?>

@@ -71,7 +71,11 @@ class deviceQL extends connect_database{
     return $this->tuychinh($sql_update); // Thực thi câu lệnh cập nhật
 }
     public function chitietghinhan($sql){
-        $sql = "";
+        return $this->tuychinh($sql);
+    }
+
+    public function baotriTB($sql){
+        return $this->tuychinh($sql);
     }
 }
 ?>

@@ -29,7 +29,6 @@ class connect_database
         $arr=array();
         $link=$this->connect();
         $result=$link->query($sql);
-
         if($result->num_rows)
         {
             while($row=$result->fetch_assoc())

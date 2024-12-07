@@ -82,8 +82,8 @@ $p = new device();
                         <div class="mb-4">
                             <label class="form-label d-flex">Tình trạng thiết bị</label>
                             <select name="tinhtrang" class="select-single js-states form-control">
-                                <option value="1" <?php if ($tingtrang == 1) echo 'selected'; ?>>Bảo trì</option>
-                                <option value="2" <?php if ($tingtrang == 2) echo 'selected'; ?>>Chưa bảo trì</option>
+                                <option value="1" <?php if ($tingtrang == 1) echo 'selected'; ?>>Bình thường</option>
+                                <option value="2" <?php if ($tingtrang == 2) echo 'selected'; ?>>Bảo trì</option>
                             </select>
                         </div>
     

@@ -82,16 +82,15 @@ $p = new device();
 
 					<!-- Content wrapper start -->
 					<div class="content-wrapper">
-                        <h3 class="text-center mb-4">Form ghi nhận</h3>
+                        <h3 class="text-center mb-4">Bảo trì</h3>
 						
-                        <form method="post" class="shadow p-4 rounded bg-light " enctype="multipart/form-data" style="margin-left: 20px;">
+                        <form action="DStinhtrangTB.php" method="post" class="shadow p-4 rounded bg-light " enctype="multipart/form-data" style="margin-left: 20px;">
                             <div class="row">
                                 <div class="card">
 									<div class="card-body">
 										<div class="was-validated">
-											<label for="validationTextarea" class="form-label">Mô tả</label>
+											<label for="validationTextarea" class="form-label">Mô tả bảo trì</label>
 											<textarea class="form-control is-invalid" id="validationTextarea"  required="" name="mota"></textarea>
-
 										</div>
 									</div>
 								</div>
@@ -101,7 +100,7 @@ $p = new device();
                                 <div class="card">
 									<div class="card-body">
 										<div class="m-0">
-											<div class="form-label">Thời gian ghi nhận</div>
+											<div class="form-label">Ngày bảo trì</div>
 											<div class="input-group">
 												<span class="input-group-text">
 													<i class="bi bi-calendar4"></i>
@@ -111,22 +110,42 @@ $p = new device();
 										</div>
 									</div>
 								</div>
-						</div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="text-end">
-                                    <input type="hidden" value="<?php echo $_GET['id'];?>" class="form-control" name="idtb"/>
-									
-                                    <input 
-											type="hidden" 
-											value="<?php echo ($_SESSION['dangnhap']['nhanVienManv'] ?? ''); ?>" 
-											class="form-control" 
-											name="idnv"
-										/>
+							</div>
+							<div class="row">
+                                <div class="card">
+									<div class="card-body">
+										<div class="was-validated">
+											<label for="validationTextarea" class="form-label">Giải pháp</label>
+											<textarea class="form-control is-invalid" id="validationTextarea"  required="" name="giaiphap"></textarea>
+										</div>
+									</div>
+								</div>
+                            </div>
+							<div class="row">
+                                <div class="card">
+									<div class="card-body">
+										<div class="was-validated">
+											<label for="validationTextarea" class="form-label">Kết quả</label>
+											<textarea class="form-control is-invalid" id="validationTextarea"  required="" name="ketqua"></textarea>
+										</div>
+									</div>
+								</div>
+                            </div>
+                        	<div class="row">
+								<div class="col-12">
+									<div class="text-end">
+										<input type="hidden" value="<?php echo $_GET['id'];?>" class="form-control" name="id"/>
+										<input type="hidden" value="<?php echo $_GET['idTB'];?>" class="form-control" name="idtb"/>
+										<input 
+												type="hidden" 
+												value="<?php echo ($_SESSION['dangnhap']['nhanVienManv'] ?? ''); ?>" 
+												class="form-control" 
+												name="idnv"
+											/>
 
-                                        <button type="submit" name="nutGhinhan" class="btn btn-primary">
-                                            <i class="bi bi-arrow-repeat"></i>Ghi nhận
-                                        </button>
+											<button type="submit" name="nutBaotri" class="btn btn-primary">
+												<i class="bi bi-arrow-repeat"></i>Cập nhật tình trạng
+											</button>
                                 </div>
                             </div>
                         </div>

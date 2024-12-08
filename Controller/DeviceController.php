@@ -101,7 +101,54 @@
             }else{
                 echo 'Đang cập nhật dữ liệu';
             }
-    }
+        }
+
+
+
+        public function selectDsBaotriTB($sql){
+            $link = $this->connect();
+            $ketqua = mysqli_query($link, $sql);
+            $i = mysqli_num_rows($ketqua);
+            if($i>0){
+                echo '<table class="table m-0">
+						<thead>
+							<tr>
+								<th>STT</th>
+								<th>Tên thiết bị</th>
+								<th>Nhân viên bảo trì</th>
+								<th>Mô tả bảo trì</th>
+								<th>Giải Pháp</th>
+								<th>Ngày bảo trì</th>
+                                <th>Kết quả</th>
+							</tr>
+						</thead>';
+                    $dem=1;
+                    while($row = mysqli_fetch_array($ketqua)){
+                        $tenTB = $row['TenTB'];
+                        $mota = $row['Motabaotri'];
+                        $ngaybaotri = $row['Ngaybaotri'];
+                        $giaiphap = $row['GiaiPhap'];
+                        $ketqua = $row['KetQua'];
+                        $tenNV = $row['TenNV'];
+                        echo '
+                            <tbody>
+								<tr>
+									<td style="padding-top: 18px;">'.$dem.'</td>
+									<td style="padding-top: 18px;">'.$tenTB.'</td>
+									<td style="padding-top: 18px;">'.$tenNV.'</td>
+									<td style="padding-top: 18px;">'.$mota.'</td>
+									<td style="padding-top: 18px;">'.$giaiphap.'</td>
+									<td style="padding-top: 18px;">'.$ngaybaotri.'</td>
+									<td style="padding-top: 18px;">'.$ketqua.'</td>
+								</tr>
+                            </tbody>';
+                        $dem++;
+                    }
+                    echo '</table>';
+            }else{
+                echo 'Đang cập nhật dữ liệu';
+            }
+        }
 }
 ?>
 

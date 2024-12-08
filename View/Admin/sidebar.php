@@ -27,7 +27,7 @@
                                 <a href="DStinhtrangTB.php">Ghi nhận tình trạng</a>
                             </li>
                             <li>
-                                <a href="#">Bảo trì</a>
+                                <a href="baotriTB.php">Bảo trì</a>
                             </li>
                         </ul>
                     </div>

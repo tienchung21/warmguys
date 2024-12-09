@@ -1,10 +1,17 @@
-<?php
-include_once('../../model/quanlytapthu.php');
-
-
-include('../../Controller/cdkytapthu.php');
-?>
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<?php 
+        session_start();
+        ?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html><!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
@@ -30,65 +37,6 @@ include('../../Controller/cdkytapthu.php');
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-    .form-container {
-        max-width: 600px;
-        padding: 20px;
-        border-radius: 8px;
-        margin: auto;
-        background-size: cover;
-        color: beige;
-        font-size: 20px;
-
-    }
-
-    section {
-        color: black;
-    }
-
-    h2 {
-        text-align: center;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    label {
-        display: block;
-        font-weight: bold;
-    }
-
-    input[type="text"],
-    input[type="tel"],
-    input[type="email"],
-    section[id="idCars"] {
-        width: 100%;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-
-    .form-buttons {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .btn-submit {
-        background-color: #4CAF50;
-        color: white;
-        width: 200px;
-        height: 60px;
-    }
-
-    .btn-cancel {
-        background-color: #f44336;
-        color: white;
-        width: 200px;
-        height: 60px;
-    }
-    </style>
 </head>
 
 <body class="black-bg">
@@ -131,15 +79,14 @@ include('../../Controller/cdkytapthu.php');
                                         </ul>
                                     </li>
                                     <li><a href="contact.php">Liên hệ</a></li>
-                                    <li><a href="danhgia.php">Đánh giá từ khách hàng</a></li>
                                     <li><a href="../Admin/index.php">quản lý</a></li>
                                 </ul>
                             </nav>
                         </div>
-                        <div class="header-btns d-none d-lg-block f-right">
-                            <a href="dkytapthu.html" class="btn">Đăng Kí Tập Thử</a>
-                        </div>
                         <!-- Header-btn -->
+                        <div class="header-btns d-none d-lg-block f-right">
+                            <a href="dkytapthu.php" class="btn">Đăng Kí Tập Thử</a>
+                        </div>
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -158,64 +105,100 @@ include('../../Controller/cdkytapthu.php');
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 pt-70">
-                                <h2>Đăng Ký Tập Thử
-                                </h2>
+                                <h2>Đánh Giá từ khách hàng</h2>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="form-container">
-            <form method="post" id="registrationForm">
-                <div class="form-group">
-                    <label for="name">Họ Tên:</label>
-                    <input type="text" name="name" required pattern="^[a-zA-Z\s]+$" placeholder="Nhập họ và tên"
-                        title="Họ tên không hợp lệ, vui lòng nhập lại.">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Số điện thoại:</label>
-                    <input type="tel" name="phone" required pattern="^\d{10,11}$" placeholder="Nhập số điện thoại"
-                        title="Số điện thoại không hợp lệ, vui lòng nhập lại.">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" required placeholder="Nhập email"
-                        title="Email không hợp lệ, vui lòng nhập lại.">
-                </div>
-                <div class="form-group">
-                    <label for="idCard">Căn Cước:</label>
-                    <input type="text" name="idCard" required pattern="^\d{9,12}$" placeholder="Nhập CCCD"
-                        title="Căn cước không hợp lệ, vui lòng nhập lại.">
-                </div>
-                <div class="form-group">
-                    <label>Khung giờ gọi cho bạn:</label>
-                    <select class="form-group" name="Thoigianlienlac" placeholder="Chọn khung giờ">
-                        <option value="9:00 AM - 12:00 PM">9:00 AM - 12:00 PM</option>
-                        <option value="12:00 PM - 2:00 PM">12:00 PM - 2:00 PM</option>
-                        <option value="2:00 PM - 5:00 PM">2:00 PM - 5:00 PM</option>
-                        <option value="5:00 PM - 10:00 PM">5:00 PM - 10:00 PM</option>
-                    </select>
-                </div>
-                <br> <br>
-                <div class="form-buttons">
-                    <button type="submit" name="dkytap" class="btn btn-submit">Xác nhận</button>
-                    <button type="button" class="btn btn-cancel" onclick="cancelForm()">Hủy</button>
-                </div>
+        <!-- Hero End -->
+        <!--? Gallery Area Start -->
+        <div class="gallery-area">
+       
+        <?php
+                include('../../Model/xuatdulieu.php');
+					$obj = new database();
 
-            </form>
+					$danhgia = $obj->danhsachdanhgia();
+
+					// xử lý
+					// thêm
+					
+                  ?>
+        <div class="comments-area">
+                            <h4 class="text-white">Comments</h4>
+                            <div class="comment-list">
+                            <?php foreach ($danhgia as $item): ?>
+                                <div class="single-comment justify-content-between d-flex mt-40">
+                                
+                                    <div class="user justify-content-between d-flex">
+                                        <div class="thumb">
+                                            <img src="assets/img/comment/comment_1.png" alt="">
+                                        </div>
+                                        <div class="desc">
+                                            <p class="comment text-white">
+                                            <?= $item["NoiDung"] ?>
+                                            </p>
+                                            <div class="d-flex justify-content-between">
+                                                <div class="d-flex align-items-center ">
+                                                    <h5>
+                                                        <a href="#" class="text-danger"><?= $item["TenTV"] ?></a>
+                                                    </h5>
+                                                    <p class="date text-white"><?= $item["Date"] ?></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                <?php endforeach; ?>    
+                            </div>
+                        </div>
         </div>
+        <!-- Gallery Area End -->
+        <!-- ? services-area -->
+        <section class="services-area">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s">
+                            <div class="features-icon">
+                                <i class="ti-location-pin"></i>
+                            </div>
+                            <div class="features-caption">
+                                <h3>Location</h3>
+                                <p>12 Nguyen Van Bao streets </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-40 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
+                            <div class="features-icon">
+                                <i class="ti-tablet"></i>
+                            </div>
+                            <div class="features-caption">
+                                <h3>Phone</h3>
+                                <p>(84) 349 195 620</p>
 
-        <script>
-        function cancelForm() {
-            document.getElementById("registrationForm").reset();
-<<<<<<< HEAD
-=======
-            alert("Đã hủy đăng ký");
->>>>>>> main
-        }
-        </script>
-
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-40 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
+                            <div class="features-icon">
+                                <i class="ti-email"></i>
+                            </div>
+                            <div class="features-caption">
+                                <h3>Email</h3>
+                                <p>chung9atm@gmail.com</p>
+                                <p>chung10atm@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <!--? Footer Start-->
@@ -227,18 +210,22 @@ include('../../Controller/cdkytapthu.php');
                         <div class="col-xl-12">
                             <div class="single-footer-caption mb-50 text-center">
                                 <!-- logo -->
-                                <div class="footer-logo wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s">
-                                </div>
+                
                                 <!-- Menu -->
                                 <!-- Header Start -->
-                                <div class="header-area main-header2 wow fadeInUp" data-wow-duration="2s"
-                                    data-wow-delay=".4s">
+                                <div class="header-area main-header2 wow fadeInUp" data-wow-duration="2s" data-wow-delay=".4s">
                                     <div class="main-header main-header2">
                                         <div class="menu-wrapper menu-wrapper2">
                                             <!-- Main-menu -->
                                             <div class="main-menu main-menu2 text-center">
                                                 <nav>
                                                     <ul>
+                                                        <li><a href="index.html">Home</a></li>
+                                                        <li><a href="about.html">About</a></li>
+                                                        <li><a href="courses.html">Courses</a></li>
+                                                        <li><a href="pricing.html">Pricing</a></li>
+                                                        <li><a href="gallery.html">Gallery</a></li>
+                                                        <li><a href="contact.php">Contact</a></li>
                                                     </ul>
                                                 </nav>
                                             </div>
@@ -247,8 +234,7 @@ include('../../Controller/cdkytapthu.php');
                                 </div>
                                 <!-- Header End -->
                                 <!-- social -->
-                                <div class="footer-social mt-30 wow fadeInUp" data-wow-duration="3s"
-                                    data-wow-delay=".8s">
+                                <div class="footer-social mt-30 wow fadeInUp" data-wow-duration="3s" data-wow-delay=".8s">
                                     <a href="#"><i class="fab fa-twitter"></i></a>
                                     <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
                                     <a href="#"><i class="fab fa-pinterest-p"></i></a>
@@ -266,10 +252,8 @@ include('../../Controller/cdkytapthu.php');
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                     Copyright &copy;
                                     <script>
-                                    document.write(new Date().getFullYear());
-                                    </script> All rights reserved | This template is made with <i class="fa fa-heart"
-                                        aria-hidden="true"></i> by <a href="https://colorlib.com"
-                                        target="_blank">Colorlib</a>
+                                        document.write(new Date().getFullYear());
+                                    </script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 </p>
                             </div>

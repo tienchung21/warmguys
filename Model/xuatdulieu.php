@@ -3,7 +3,7 @@
 class database{
     private function connect()
     {
-        $conn= new mysqli("localhost","root","","warmguys");
+        $conn= new mysqli("localhost","root","","warmguyss");
         if($conn->connect_errno)
         {
             echo"<script>Alert('Ket noi khong thanh cong')</script>";
@@ -30,6 +30,12 @@ class database{
     public function danhsachthanhvien()
     {
             $sql="select * from thanhvien ";
+        return $this->xuatdulieu($sql);
+    }
+    public function danhsachdanhgia()
+    {
+            $sql="SELECT 
+            phanhoi.*, thanhvien.* from phanhoi JOIN thanhvien ON phanhoi.MaTV = thanhvien.MaTV where TrangThaiPH='daduyet' ";
         return $this->xuatdulieu($sql);
     }
     public function danhsachtheodoi()

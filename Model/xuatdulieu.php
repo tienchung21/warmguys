@@ -3,7 +3,7 @@
 class database{
     private function connect()
     {
-        $conn= new mysqli("localhost","root","","warmguys");
+        $conn= new mysqli("localhost","root","","warmguyss");
         if($conn->connect_errno)
         {
             echo"<script>Alert('Ket noi khong thanh cong')</script>";

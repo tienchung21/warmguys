@@ -20,8 +20,8 @@ $p = new deviceQL();
             ];
 
             $tingtrang_names=[
-                1 => "Bảo trì",
-                2 => "Chưa bảo trì"
+                1 => "Bình thường",
+                2 => "Bảo trì",
             ];
 
             $loaiTB_names= $loaiTB_names[$loaiTB];
@@ -69,7 +69,7 @@ $p = new deviceQL();
 
         if (isset($_POST["nutSua"])) {
             // Lấy dữ liệu từ form
-            $idTB = $_POST["nutSua"];
+            $idTB = $_GET["id"];
             $tenTB = $_POST["tenTB"];
             $loaiTB = $_POST["loaiTB"];
             $tinhtrang = $_POST["tinhtrang"];
@@ -84,19 +84,101 @@ $p = new deviceQL();
             ];
         
             $tingtrang_names = [
-                1 => "Bảo trì",
-                2 => "Chưa bảo trì"
+                1 => "Bình thường",
+                2 => "Bảo trì"
             ];
         
             $loaiTB_names = $loaiTB_names[$loaiTB];
             $tingtrang_names = $tingtrang_names[$tinhtrang];
-        
+            // echo ($tenTB);
+            // echo ($loaiTB_names);
+            // echo ($tingtrang_names);
+            // echo ($hinhanh);
+            // echo ($idTB);
+            // echo ($p->Capnhatthietbi($idTB, $tenTB, $loaiTB_names, $tingtrang_names, $hinhanh));
             // Gọi phương thức cập nhật thiết bị
-            if ($p->Capnhatthietbi($idTB, $tenTB, $loaiTB_names, $tingtrang_names, $hinhanh)) {
+            if ($p->Capnhatthietbi($idTB, $tenTB, $loaiTB_names, $tingtrang_names, $hinhanh)==1) {
                 echo "<script>alert('Cập nhật thiết bị thành công!'); window.location='device.php';</script>";
             } else {
                 echo "<script>alert('Cập nhật thiết bị thất bại!');</script>";
             }
         }
         
+
+        if(isset($_POST['nutGhinhan'])){
+            $idTB = $_POST['idtb'];
+            $id = $_POST['id'];
+            $Manv = $_POST['idnv'];
+            $mota = $_POST['mota'];
+            $thoigian = $_POST['thoigianghinhan'];
+
+            if($mota!=""){
+                $parts = explode(' ', $thoigian); // Tách chuỗi theo khoảng trắng
+                $ngaythangnam = $parts[0]; // Lấy phần ngày tháng năm
+                $time = $parts[1] . ' ' . $parts[2]; // Lấy phần giờ (bao gồm cả AM/PM)
+                
+                // Định dạng ngày tháng năm sang dạng chuẩn MySQL (YYYY-MM-DD)
+                $ngaythangnamFormatted = date("Y-m-d", strtotime($ngaythangnam));
+
+
+                $sql = "INSERT INTO chitietghinhantinhtrang (Motatinhtrang, Ngayghinhan, thietBiMaTB, nhanVienManv, time)
+                    VALUES ('$mota', '$ngaythangnamFormatted', '$idTB', '$Manv', '$time');";
+
+
+                $sqltrangthaiTB = "UPDATE thietbi
+                SET TinhTrangTB = 'Bảo trì'
+                WHERE MaTB = '$idTB';"; 
+                 $sqltrangthaighinhan = "UPDATE chitietghinhantinhtrang
+                 SET trangthai = 'Bảo trì'
+                 WHERE ID = '$id';"; 
+
+
+                echo $sqltrangthaighinhan;
+                if ($p->chitietghinhan($sql)) {
+                    if($p->chitietghinhan($sqltrangthaiTB)&&$p->chitietghinhan($sqltrangthaighinhan)){
+                        echo "<script>alert('Ghi nhận tình trạng thành công'); window.location='DStinhtrangTB.php';</script>";
+                    }
+                } else {
+                    echo "<script>alert('Ghi nhận tình trạng không thành công');</script>";
+                }
+
+            }
+        }
+
+        if(isset($_POST['nutBaotri'])){
+            $id = $_POST['id'];
+            $idTB = $_POST['idtb'];
+            $Manv = $_POST['idnv'];
+            $mota = $_POST['mota'];
+            $thoigian = $_POST['thoigianghinhan'];
+            $giaiphap = $_POST['giaiphap'];
+            $ketqua = $_POST['ketqua'];
+
+            if($mota!=""){
+                $parts = explode(' ', $thoigian); // Tách chuỗi theo khoảng trắng
+                $ngaythangnam = $parts[0]; // Lấy phần ngày tháng năm
+                $time = $parts[1] . ' ' . $parts[2]; // Lấy phần giờ (bao gồm cả AM/PM)
+                
+                // Định dạng ngày tháng năm sang dạng chuẩn MySQL (YYYY-MM-DD)
+                $ngaythangnamFormatted = date("Y-m-d", strtotime($ngaythangnam));
+                $sqltrangthai = "UPDATE chitietghinhantinhtrang
+                                    SET trangthai = 'Đã bảo trì'
+                                    WHERE ID = '$id';
+                                    ";  
+                
+                $sqltrangthaiTB = "UPDATE thietbi
+                SET TinhTrangTB = 'Bình thường'
+                WHERE MaTB = '$idTB';"; 
+                $sql = "INSERT INTO baotri (Motabaotri, Ngaybaotri, KetQua, GiaiPhap, thietBiMaTB, nhanVienManv) VALUES ('$mota', '$ngaythangnamFormatted', '$ketqua', '$giaiphap', '$idTB', '$Manv');";
+                if ($p->baotriTB($sql)) {
+                    if($p->baotriTB($sqltrangthai)){ 
+                        if($p->baotriTB($sqltrangthaiTB)) {
+                            echo "<script>alert('Cập nhật tình trạng thành công'); window.location='DStinhtrangTB.php';</script>"; 
+                        }
+                    }
+                } else {
+                    echo "<script>alert('Cập nhật tình trạng không thành công');</script>";
+                }
+            }
+        }
 ?>

@@ -1,5 +1,4 @@
 <?php
-
 class database{
     private function connect()
     {
@@ -10,7 +9,7 @@ class database{
             exit();
         }
         else
-        return $conn;
+        return $conn;   
     }
     public function xuatdulieu($sql)
     {
@@ -45,9 +44,11 @@ class database{
         JOIN thanhvien ON theodoitapluyen.MaTV = thanhvien.MaTV";
         return $this->xuatdulieu($sql);
     }
-    public function danhsachtaikhoan()
+    public function danhsachtaikhoan($sql = null)
     {
-            $sql="select * from taikhoan";
+        if ($sql === null) {
+            $sql = "SELECT * FROM taikhoan";
+        }
         return $this->xuatdulieu($sql);
     }
 

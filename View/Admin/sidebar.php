@@ -15,20 +15,19 @@
                         <i class="bi bi-person"></i>
                         <span class="menu-text">Quản lí thành viên</span>
                     </a>
-
                 </li>
-                <li class="sidebar-dropdown">
+                <li class="sidebar-dropdown active">
                     <a href="device.php">
                         <i class="bi bi-display"></i>
                         <span class="menu-text">Quản lí thiết bị</span>
                     </a>
-                    <div class="sidebar-submenu">
+                    <div class="sidebar-submenu" style="display: block;">
                         <ul>
                             <li>
-                                <a href="login.html">Thiết bị</a>
+                                <a href="DStinhtrangTB.php">Ghi nhận tình trạng</a>
                             </li>
                             <li>
-                                <a href="#">Loại thiết bị</a>
+                                <a href="baotriTB.php">Bảo trì</a>
                             </li>
                         </ul>
                     </div>

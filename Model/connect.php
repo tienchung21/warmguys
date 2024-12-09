@@ -15,12 +15,12 @@ class connect_database
     public function dangnhaptaikhoan($username, $password)
     {
         //$password=md5($password);
-        $sql = "SELECT ID FROM taikhoan WHERE Username = '$username' AND Password = '$password'";
+        $sql = "SELECT * FROM taikhoan WHERE Username = '$username' AND Password = '$password'";
         $link = $this->connect();
         $result = $link->query($sql);
         if ($result->num_rows) {
             $row = $result->fetch_assoc();
-            return $row["ID"];
+            return $row;
         } else
             return 0;
     }
@@ -46,5 +46,11 @@ class connect_database
         else
             return 0;
     }
+      // Thêm phương thức để lấy insert_id
+      public function getLastInsertId()
+      {
+          $link = $this->connect();
+          return $link->insert_id;
+      }
 }
 ?>

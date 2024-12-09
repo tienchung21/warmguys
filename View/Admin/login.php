@@ -18,6 +18,7 @@ if (isset($_POST["btDangnhap"])) {
             window.location.href = 'index.php';
         </script>";
         $_SESSION['dangnhap'] = $id_tk;
+        $_SESSION['ten']= $email;
     } else {
         echo "<script>
             alert('Đăng nhập không thành công! Vui lòng kiểm tra lại.');

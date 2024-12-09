@@ -1,16 +1,15 @@
 <?php
-
 class database{
     private function connect()
     {
-        $conn= new mysqli("localhost","root","","warmguyss");
+        $conn= new mysqli("localhost","root","","warmguys");
         if($conn->connect_errno)
         {
             echo"<script>Alert('Ket noi khong thanh cong')</script>";
             exit();
         }
         else
-        return $conn;
+        return $conn;   
     }
     public function xuatdulieu($sql)
     {
@@ -45,9 +44,11 @@ class database{
         JOIN thanhvien ON theodoitapluyen.MaTV = thanhvien.MaTV";
         return $this->xuatdulieu($sql);
     }
-    public function danhsachtaikhoan()
+    public function danhsachtaikhoan($sql = null)
     {
-            $sql="select * from taikhoan";
+        if ($sql === null) {
+            $sql = "SELECT * FROM taikhoan";
+        }
         return $this->xuatdulieu($sql);
     }
 

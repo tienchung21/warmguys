@@ -3,7 +3,7 @@ class connect_database
 {
     public function connect()
     {
-        $conn= new mysqli("localhost","root","","warmguyss");
+        $conn= new mysqli("localhost","root","","warmguys");
         if($conn->connect_errno)
         {
             echo"<script>Alert('Ket noi khong thanh cong')</script>";
@@ -46,5 +46,11 @@ class connect_database
         else
             return 0;
     }
+      // Thêm phương thức để lấy insert_id
+      public function getLastInsertId()
+      {
+          $link = $this->connect();
+          return $link->insert_id;
+      }
 }
 ?>

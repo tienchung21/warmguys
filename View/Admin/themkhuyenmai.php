@@ -65,7 +65,7 @@ include('../../Controller/c_discount.php');
                 </div>
                 <div class="mb-3">
                     <label for="PhanTramDiscount" class="form-label">Phần Trăm Discount</label>
-                    <input type="number" class="form-control" name="PhanTramDiscount" required />
+                    <input type="number" class="form-control" name="PhanTramDiscount" required step="0.01" required />
                 </div>
                 <div class="mb-3">
                     <label for="NgayBatDauKM" class="form-label">Ngày Bắt Đầu</label>

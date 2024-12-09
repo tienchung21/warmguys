@@ -3,8 +3,6 @@ include('connect.php');
 
 class hoadon extends connect_database
 {
-class hoadon extends connect_database
-{
     public function danhsachhoadon()
     {
         if (isset($_POST["subngay"])) {

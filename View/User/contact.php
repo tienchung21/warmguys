@@ -63,24 +63,16 @@ include('../../Controller/cquanlyphanhoidd.php');
                                         <li><a href="elements.html">Yếu tố</a></li>
                                     </ul>
                                 </li>
-<<<<<<< HEAD
-                                <li><a href="contact.php">Liên hệ</a></li>
-=======
                                 <li><a href="contact.php
 ">Liên hệ</a></li>
                                 <li><a href="../Admin/index.php">quản lý</a></li>
->>>>>>> main
                             </ul>
                         </nav>
                     </div>
                     <!-- Header-btn -->
                     <div class="header-btns d-none d-lg-block f-right">
-<<<<<<< HEAD
-                        <a href="contact.html" class="btn">Contact me</a>
-=======
                         <a href="dkytapthu.php" class="btn">Đăng Kí Tập Thử</a>
 
->>>>>>> main
                     </div>
                     <!-- Mobile Menu -->
                     <div class="col-12">
@@ -145,7 +137,7 @@ include('../../Controller/cquanlyphanhoidd.php');
                     <!-- Mã thành viên -->
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label for="memberId" class="form-label">Mã thành viên(Nếu có)</label>
+                            <label for="memberId" class="form-label">Mã thành viên(Bắt buộc)</label>
                             <input type="text" class="form-control" id="memberId" name="memberId"
                                 placeholder="Nhập mã thành viên" required>
                         </div>

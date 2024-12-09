@@ -209,10 +209,7 @@ include('../../Controller/cdkytapthu.php');
         <script>
         function cancelForm() {
             document.getElementById("registrationForm").reset();
-<<<<<<< HEAD
-=======
             alert("Đã hủy đăng ký");
->>>>>>> main
         }
         </script>
 

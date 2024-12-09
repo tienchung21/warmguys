@@ -137,7 +137,7 @@ include('../../Controller/cquanlyphanhoidd.php');
                     <!-- Mã thành viên -->
                     <div class="col-md-6">
                         <div class="mb-3">
-                            <label for="memberId" class="form-label">Mã thành viên(Nếu có)</label>
+                            <label for="memberId" class="form-label">Mã thành viên(Bắt buộc)</label>
                             <input type="text" class="form-control" id="memberId" name="memberId"
                                 placeholder="Nhập mã thành viên" required>
                         </div>

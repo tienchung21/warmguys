@@ -15,6 +15,7 @@ class goitap extends connect_database{
         $sql="delete from goitap where magoi=$magoi";
         return $this->tuychinh($sql);
     }
+    
     public function themgoitap($sql)
     {
         return $this->tuychinh($sql);

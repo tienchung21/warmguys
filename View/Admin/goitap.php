@@ -41,7 +41,7 @@
 
         <div class="main-container">
             <?php
-            include('header.php');
+            include_once('header.php');
             ?>
             <div class="text-end mb-3">
                 <a href="../Admin/themgoitap.php" class="btn btn-primary">

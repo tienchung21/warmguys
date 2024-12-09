@@ -1,6 +1,6 @@
 <?php
-include('../../Model/quanlihoadon.php');
-include('../../Controller/c_quanlihoadon.php');
+include_once('../../Model/quanlihoadon.php');
+include_once('../../Controller/c_quanlihoadon.php');
 $obj=new hoadondd();
 
 ?>
@@ -41,13 +41,13 @@ $obj=new hoadondd();
 
         <!-- Sidebar wrapper start -->
         <?php
-        include('sidebar.php');
+        include_once('sidebar.php');
         ?>
         <!-- Sidebar wrapper end -->
 
         <div class="main-container">
             <?php
-            include('header.php');
+            include_once('header.php');
             ?>
             <div class="text-end mb-3">
                 <a href="goitap.php" class="btn btn-primary">

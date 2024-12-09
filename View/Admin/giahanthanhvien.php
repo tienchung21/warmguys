@@ -56,18 +56,18 @@
 
 			<!-- Sidebar wrapper start -->
 			<?php
-				include('sidebar.php');
+				include_once('sidebar.php');
 			?>
 			<!-- Sidebar wrapper end -->
 
 			<div class="main-container">
 			<?php
-				include('header.php');
+				include_once('header.php');
 			?>
 			<?php
 			
-            include('../../Model/quanlygiahan.php');
-			include('../../Controller/cgiahan.php');
+            include_once('../../Model/quanlygiahan.php');
+			include_once('../../Controller/cgiahan.php');
 			$obj = new giahan();
             $giahan = $obj->danhsachgiahan();
 			if ($giahan) {

@@ -25,28 +25,17 @@
 		<!-- Main css -->
 		<link rel="stylesheet" href="assets/css/main.min.css">
 		<link rel="stylesheet" href="assets/vendor/overlay-scroll/OverlayScrollbars.min.css">
-		<style>	
+		<style>
+		.btn-loc {
+            background-color: green;
+            width: 100px;
+			color: white;
+        }	
 		.date{
 			float: left;
 			padding-left:50px
 		}
-        .form-buttons {
-            display: flex;
-            justify-content: space-between;
-        }
-        .btn-submit:hover  {
-            background-color: #4CAF50;
-            color: white;
-            width: 200px;
-            height: 60px;
-        }
-        .btn-submit{
-            background-color: #83a4d2;
-            color: black;
-            width: 200px;
-            height: 60px;
-        }
-    </style>
+		</style>
 
 	</head>
 
@@ -66,74 +55,44 @@
 			?>
 			<?php
 			
-            include('../../Model/quanlygiahan.php');
-			include('../../Controller/cgiahan.php');
-			$obj = new giahan();
-            $giahan = $obj->danhsachgiahan();
-			if ($giahan) {
+            include('../../model/quanlytapthu.php');
+			$obj = new dkytapthu();
+            $dstapthu = $obj->dsdkytapthu();
+			if ($dstapthu) {
             echo '    <div class="row" style="margin-left: 10px;">
 							<div class="col-12">
-									<h4>Danh sách thành viên cần gia hạn</h4>
+							<h4>Danh sách khách hàng đăng ký tập thử</h4>
 									<div class="card-body">
 										<div class="table-responsive">
 											<table class="table m-0">
-											<form method="post">
 												<thead>
 													<tr>
-														<th>Mã thành viên</th>
-														<th>Tên thành viên</th>
-														<th>Ngày kết thúc</th>
+														<th>Mã KH đăng ký</th>
+														<th>Họ và tên</th>
+														<th>Số điện thoại</th>
+														<th>Email</th>
+														<th>Số CCCD</th>
+														<th>Thời gian gọi cho KH</th>
 													</tr>
 												</thead>
 												<tbody>';
-			for ($i = 0; $i < count($giahan); $i++) {
-							echo                    '<tr>
-														<td>'.$giahan[$i]["MaTV"].'</td>
-                                                        <td>'.$giahan[$i]["TenTV"].'</td>
-														<td>'.date('d/m/Y', strtotime($giahan[$i]["NgayKetThuc"])).'</td>
-													</tr>
-													
-                                                    
-													
+			for ($i = 0; $i < count($dstapthu); $i++) {
+							echo                       '<tr>
+														<td>'.$dstapthu[$i]["ID"].'</td>
+														<td>'.$dstapthu[$i]["Hoten"].'</td>
+														<td>'.$dstapthu[$i]["SDT"].'</td>
+														<td>'.$dstapthu[$i]["Email"].'</td>
+                                                        <td>'.$dstapthu[$i]["CanCuoc"].'</td>
+														<td>'.$dstapthu[$i]["Thoigianlienlac"].'</td>
+														</tr>
                                                     ';}
                 echo '
 				</tbody>
-				
-					<tr>
-                                                        <td></td>
-                                                        <td><button type="submit" name="giahan" class="btn btn-submit" style="width: 190px;">Gửi yêu cầu gia hạn</button></td>
-                                                        <td></td>
-                                                    </tr>
-					</form>
                         </table>
                     </div>
                 </div>
             </div>
             </div>'; }
-			else
-			{ 
-				echo '    <div class="row" style="margin-left: 10px;">
-				<div class="col-12">
-						<h4>Danh sách thành viên cần gia hạn</h4>
-						<div class="card-body">
-							<div class="table-responsive">
-								<table class="table m-0">
-								<form method="post">
-									<thead>
-										<tr>
-											<th>Mã thành viên</th>
-											<th>Tên thành viên</th>
-											<th>Ngày kết thúc</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Không có thành viên cần gia hạn!</td>
-											<td></td>
-											<td></td>
-										</tr>
-									</tbody>';
-			}
 			?>
 		<!-- Page wrapper end -->
 

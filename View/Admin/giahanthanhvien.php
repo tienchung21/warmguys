@@ -110,6 +110,30 @@
                 </div>
             </div>
             </div>'; }
+			else
+			{ 
+				echo '    <div class="row" style="margin-left: 10px;">
+				<div class="col-12">
+						<h4>Danh sách thành viên cần gia hạn</h4>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table m-0">
+								<form method="post">
+									<thead>
+										<tr>
+											<th>Mã thành viên</th>
+											<th>Tên thành viên</th>
+											<th>Ngày kết thúc</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Không có thành viên cần gia hạn!</td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>';
+			}
 			?>
 		<!-- Page wrapper end -->
 

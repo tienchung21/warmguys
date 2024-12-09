@@ -96,7 +96,10 @@
                     <div class="sidebar-submenu">
                         <ul>
                             <li>
-                                <a href="#">1</a>
+                                <a href="hoadon.php">Tạo hóa đơn</a>
+                            </li>
+                            <li>
+                                <a href="hoadonchuatt.php">Hóa đơn chưa thanh toán</a>
                             </li>
                             <li>
                                 <a href="giahanthanhvien.php">Danh sách thành viên cần gia hạn</a>

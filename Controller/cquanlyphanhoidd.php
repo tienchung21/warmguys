@@ -17,8 +17,7 @@ if (isset($_POST["btThem"])) {
     // Lấy dữ liệu từ form
     $tenTV=$_POST["customerName"];
 
-    // Lấy dữ liệu từ form
-
+    // Lấy dữ liệu từ form    
     $NoiDungPhanHoi = $_POST["feedback"];
     $MaTV = !empty($_POST["memberId"]) ? $_POST["memberId"] : "NULL"; // Cho phép NULL nếu không có thành viên
     $SoDienThoai = $_POST["phone"];

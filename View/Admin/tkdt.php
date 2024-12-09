@@ -51,7 +51,7 @@
 
 			<div class="main-container">
 			<?php
-				include('header.php');
+				include_once('header.php');
 			?>
 			<?php
 			

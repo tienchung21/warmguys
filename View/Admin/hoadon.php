@@ -1,7 +1,7 @@
 <?php
 include('../../Model/quanlihoadon.php');
 include('../../Controller/c_quanlihoadon.php');
-$obj=new hoadondd();
+
 
 ?>
 <!doctype html>
@@ -91,7 +91,8 @@ $obj=new hoadondd();
                     <label for="GoiTap" class="form-label">Gói tập</label>
                     <select name="goiTap" class="form-control" required>
                         <option value="">-Chọn gói tập-</option>
-                        <?php echo $obj->selectgoitap(); ?>
+                        <?php $obj=new hoadondd();
+                         echo $obj->selectgoitap(); ?>
                     </select><br><br>
                 </div>
                 <div class="mb-3">

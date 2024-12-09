@@ -163,7 +163,7 @@ $idSua = 1;
 					</style> -->
 					<?php
 
-					include('../../Model/xuatdulieu.php');
+include_once('../../Model/xuatdulieu.php');
 					$obj = new database();
 
 					$thanhvien = $obj->danhsachthanhvien();

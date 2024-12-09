@@ -1,6 +1,25 @@
 <!-- Page header starts -->
 <div class="page-header">
+<?php
+            
+            include_once('../../Model/xuatdulieu.php');
+            $obj = new database();
+            
+            
+            if (isset($_SESSION['ten'])) {
+                $emailll = $_SESSION['ten']; // Lấy giá trị từ session
+                $emailll = trim($emailll);
+            
+                // Câu truy vấn với giá trị từ session
+              $sql = "SELECT taikhoan.Username, nhanvien.TenNV 
+        FROM taikhoan 
+        JOIN nhanvien ON taikhoan.Manv = nhanvien.Manv 
+        WHERE taikhoan.Username = '$emailll'";
 
+                $taikhoan = $obj->danhsachtaikhoan($sql);
+            
+            }
+            ?>
     <div class="toggle-sidebar" id="toggle-sidebar"><i class="bi bi-list"></i></div>
 
     <!-- Breadcrumb start -->
@@ -10,6 +29,9 @@
             <a href="index.php">Home</a>
         </li>
         <li class="breadcrumb-item breadcrumb-active" aria-current="page">Sales</li>
+ 
+
+
     </ol>
     <!-- Breadcrumb end -->
 
@@ -34,10 +56,14 @@
 
 
         <!-- Header actions start -->
+
         <ul class="header-actions">
+
             <li class="dropdown">
                 <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
-                    <span class="user-name d-none d-md-block">Abigale Heaney</span>
+                    <span class="user-name d-none d-md-block">       <?php
+    echo htmlspecialchars($taikhoan[0]["TenNV"], ENT_QUOTES, 'UTF-8');
+?></span>
                     <span class="avatar">
                         <img src="assets/images/user.png" alt="Admin Templates">
                         <span class="status online"></span>

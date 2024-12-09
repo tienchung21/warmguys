@@ -91,7 +91,7 @@
 				<!-- Content wrapper start -->
 				<div class="content-wrapper">
                 <?php
-                include('../../Model/xuatdulieu.php');
+              include_once('../../Model/xuatdulieu.php');
 					$obj = new database();
 
 					$thanhvien = $obj->danhsachtheodoi();

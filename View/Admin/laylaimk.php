@@ -28,7 +28,7 @@
         <div class="main-container">
            <!-- code từ đây -->
            <?php
-include('../../Model/xuatdulieu.php'); // Bao gồm file xử lý dữ liệu
+include_once('../../Model/xuatdulieu.php'); // Bao gồm file xử lý dữ liệu
 $obj = new database();
 $taikhoan = $obj->danhsachtaikhoan(); // Lấy danh sách tài khoản
 ?>

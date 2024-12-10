@@ -10,7 +10,7 @@
 						<thead>
 							<tr>
 								<th>STT</th>
-								<th></th>
+								<th>Tên thiết bị</th>
 								<th>Loại thiết bị</th>
 								<th>Tình trạng</th>
 								<th>Hình ảnh</th>
@@ -104,51 +104,58 @@
         }
 
 
-
-        public function selectDsBaotriTB($sql){
+        public function selectDsbaotri($sql) {
             $link = $this->connect();
-            $ketqua = mysqli_query($link, $sql);
-            $i = mysqli_num_rows($ketqua);
-            if($i>0){
+            $result = mysqli_query($link, $sql);
+        
+            if (!$result) {
+                die('Lỗi truy vấn SQL: ' . mysqli_error($link));
+            }
+        
+         
+            if (mysqli_num_rows($result) > 0) {
                 echo '<table class="table m-0">
-						<thead>
-							<tr>
-								<th>STT</th>
-								<th>Tên thiết bị</th>
-								<th>Nhân viên bảo trì</th>
-								<th>Mô tả bảo trì</th>
-								<th>Giải Pháp</th>
-								<th>Ngày bảo trì</th>
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên thiết bị</th>
+                                <th>Nhân viên bảo trì</th>
+                                <th>Mô tả bảo trì</th>
+                                <th>Ngày bảo trì</th>
+                                <th>Giải pháp</th>
                                 <th>Kết quả</th>
-							</tr>
-						</thead>';
-                    $dem=1;
-                    while($row = mysqli_fetch_array($ketqua)){
-                        $tenTB = $row['TenTB'];
-                        $mota = $row['Motabaotri'];
-                        $ngaybaotri = $row['Ngaybaotri'];
-                        $giaiphap = $row['GiaiPhap'];
-                        $ketqua = $row['KetQua'];
-                        $tenNV = $row['TenNV'];
-                        echo '
-                            <tbody>
-								<tr>
-									<td style="padding-top: 18px;">'.$dem.'</td>
-									<td style="padding-top: 18px;">'.$tenTB.'</td>
-									<td style="padding-top: 18px;">'.$tenNV.'</td>
-									<td style="padding-top: 18px;">'.$mota.'</td>
-									<td style="padding-top: 18px;">'.$giaiphap.'</td>
-									<td style="padding-top: 18px;">'.$ngaybaotri.'</td>
-									<td style="padding-top: 18px;">'.$ketqua.'</td>
-								</tr>
-                            </tbody>';
-                        $dem++;
-                    }
-                    echo '</table>';
-            }else{
+                            </tr>
+                        </thead>';
+        
+                $dem = 1;
+                while ($row = mysqli_fetch_array($result)) {
+                    $tenTB = $row['TenTB'];
+                    $motabaitri = $row['Motabaotri'];
+                    $tennv = $row['TenNV'];
+                    $giaiphap = $row['GiaiPhap'];
+                    $ketqua_baotri = $row['KetQua']; 
+                    $ngay = $row['Ngaybaotri'];
+        
+                    echo '
+                        <tbody>
+                            <tr>
+                                <td style="padding-top: 18px;">' . $dem . '</td>
+                                <td style="padding-top: 18px;">' . $tenTB . '</td>
+                                <td style="padding-top: 18px;">' . $tennv . '</td>
+                                <td style="padding-top: 18px;">' . $motabaitri . '</td>
+                                <td style="padding-top: 18px;">' . $ngay . '</td>
+                                <td style="padding-top: 18px;">' . $giaiphap . '</td>
+                                <td style="padding-top: 18px;">' . $ketqua_baotri . '</td>
+                            </tr>
+                        </tbody>';
+                    $dem++;
+                }
+                echo '</table>';
+            } else {
                 echo 'Đang cập nhật dữ liệu';
             }
         }
+        
 }
 ?>
 

@@ -3,7 +3,7 @@ require "../Admin/assets/PHPMailer-master/src/PHPMailer.php";
 require "../Admin/assets/PHPMailer-master/src/SMTP.php"; 
 require '../Admin/assets/PHPMailer-master/src/Exception.php'; 
 include_once('../../Model/quanlygiahan.php');
-include('../../Model/xuatdulieu.php');
+include_once('../../Model/xuatdulieu.php');
     $obj = new giahan();
     $danhsachgiahan = $obj->danhsachgiahan();
 if (isset($_POST["giahan"])) {
@@ -50,4 +50,3 @@ if (isset($_POST["giahan"])) {
 }
 }
 ?>
-

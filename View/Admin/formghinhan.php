@@ -116,7 +116,6 @@ $p = new device();
                             <div class="col-12">
                                 <div class="text-end">
                                     <input type="hidden" value="<?php echo $_GET['id'];?>" class="form-control" name="idtb"/>
-									
                                     <input 
 											type="hidden" 
 											value="<?php echo ($_SESSION['dangnhap']['nhanVienManv'] ?? ''); ?>" 

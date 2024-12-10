@@ -65,7 +65,7 @@ if (!$_SESSION["dangnhap"])
 
         <!-- Sidebar wrapper start -->
         <?php
-				include_once('sidebar.php');
+				include('sidebar.php');
 			?>
         <!-- Sidebar wrapper end -->
 

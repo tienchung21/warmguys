@@ -1,9 +1,9 @@
 <!-- Page header starts -->
 <div class="page-header">
-<?php
+    <?php
             
             include_once('../../Model/xuatdulieu.php');
-            $obj = new database();
+            $objjj = new database();
             
             
             if (isset($_SESSION['ten'])) {
@@ -16,7 +16,7 @@
         JOIN nhanvien ON taikhoan.Manv = nhanvien.Manv 
         WHERE taikhoan.Username = '$emailll'";
 
-                $taikhoan = $obj->danhsachtaikhoan($sql);
+                $taikhoan = $objjj->danhsachtaikhoan($sql);
             
             }
             ?>
@@ -29,7 +29,7 @@
             <a href="index.php">Home</a>
         </li>
         <li class="breadcrumb-item breadcrumb-active" aria-current="page">Sales</li>
- 
+
 
 
     </ol>
@@ -37,6 +37,7 @@
 
     <!-- Header actions ccontainer start -->
     <div class="header-actions-container">
+
 
         <!-- Search container start -->
         <div class="search-container">
@@ -46,7 +47,9 @@
                 <input type="text" class="form-control" placeholder="Search anything">
                 <button class="btn" type="button">
                     <i class="bi bi-search"></i>
+
                 </button>
+
             </div>
             <!-- Search input group end -->
 
@@ -61,9 +64,9 @@
 
             <li class="dropdown">
                 <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
-                    <span class="user-name d-none d-md-block">       <?php
+                    <span class="user-name d-none d-md-block"> <?php
     echo htmlspecialchars($taikhoan[0]["TenNV"], ENT_QUOTES, 'UTF-8');
-?></span>
+?> </span>
                     <span class="avatar">
                         <img src="assets/images/user.png" alt="Admin Templates">
                         <span class="status online"></span>

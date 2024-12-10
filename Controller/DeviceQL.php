@@ -90,13 +90,6 @@ $p = new deviceQL();
         
             $loaiTB_names = $loaiTB_names[$loaiTB];
             $tingtrang_names = $tingtrang_names[$tinhtrang];
-            // echo ($tenTB);
-            // echo ($loaiTB_names);
-            // echo ($tingtrang_names);
-            // echo ($hinhanh);
-            // echo ($idTB);
-            // echo ($p->Capnhatthietbi($idTB, $tenTB, $loaiTB_names, $tingtrang_names, $hinhanh));
-            // Gọi phương thức cập nhật thiết bị
             if ($p->Capnhatthietbi($idTB, $tenTB, $loaiTB_names, $tingtrang_names, $hinhanh)==1) {
                 echo "<script>alert('Cập nhật thiết bị thành công!'); window.location='device.php';</script>";
             } else {
@@ -128,9 +121,9 @@ $p = new deviceQL();
                 $sqltrangthaiTB = "UPDATE thietbi
                 SET TinhTrangTB = 'Bảo trì'
                 WHERE MaTB = '$idTB';"; 
-                 $sqltrangthaighinhan = "UPDATE chitietghinhantinhtrang
-                 SET trangthai = 'Bảo trì'
-                 WHERE ID = '$id';"; 
+                $sqltrangthaighinhan = "UPDATE chitietghinhantinhtrang
+                SET trangthai = 'Đã bảo trì'
+                WHERE ID = '$id';"; 
 
 
                 echo $sqltrangthaighinhan;

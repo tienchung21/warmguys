@@ -1,31 +1,7 @@
 <?php
-class database{
-    private function connect()
-    {
-        $conn= new mysqli("localhost","root","","warmguys");
-        if($conn->connect_errno)
-        {
-            echo"<script>Alert('Ket noi khong thanh cong')</script>";
-            exit();
-        }
-        else
-        return $conn;   
-    }
-    public function xuatdulieu($sql)
-    {
-        $arr=array();
-        $link=$this->connect();
-        $result=$link->query($sql);
-        if($result->num_rows)
-        {
-            while($row=$result->fetch_assoc())
-            $arr[]=$row;
-            return $arr;
-        }
-        else
-        return 0;
-    }
-
+include_once('connect.php');
+class database  extends connect_database{
+  
     public function danhsachthanhvien()
     {
             $sql="select * from thanhvien ";
@@ -34,7 +10,7 @@ class database{
     public function danhsachdanhgia()
     {
             $sql="SELECT 
-            phanhoi.*, thanhvien.* from phanhoi JOIN thanhvien ON phanhoi.MaTV = thanhvien.MaTV where TrangThaiPH='Đã duyệt' ";
+            phanhoi.*, thanhvien.* from phanhoi JOIN thanhvien ON phanhoi.MaTV = thanhvien.MaTV where TrangThaiPH='daduyet' ";
         return $this->xuatdulieu($sql);
     }
     public function danhsachtheodoi()
@@ -44,7 +20,6 @@ class database{
         JOIN thanhvien ON theodoitapluyen.MaTV = thanhvien.MaTV";
         return $this->xuatdulieu($sql);
     }
-
     public function danhsachtaikhoan($sql = null)
     {
         if ($sql === null) {

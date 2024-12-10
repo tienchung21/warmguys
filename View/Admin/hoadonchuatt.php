@@ -58,12 +58,12 @@ if (!$_SESSION["dangnhap"])
 
         <div class="main-container">
             <?php
-				include('header.php');
+				include_once('header.php');
 			?>
             <?php
 			
-            include('../../model/quanlychuatt.php');
-			include('../../Controller/cquanlytt.php');
+            include_once('../../model/quanlychuatt.php');
+			include_once('../../Controller/cquanlytt.php');
 			$obj = new hoadon();
             $hoadon = $obj->danhsachhoadon();
 			$tong=0;

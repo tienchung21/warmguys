@@ -2,6 +2,10 @@
 include('../../Model/quanlihoadon.php');
 include('../../Controller/c_quanlihoadon.php');
 
+session_start();
+if (!$_SESSION["dangnhap"])
+ 	header("Location:login.php");
+
 
 ?>
 <!doctype html>

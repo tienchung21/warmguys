@@ -1,5 +1,10 @@
 <?php
 error_reporting(0);
+
+session_start();
+if (!$_SESSION["dangnhap"])
+ 	header("Location:login.php");
+
 ?>
 
 <!doctype html>

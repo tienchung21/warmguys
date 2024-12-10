@@ -1,3 +1,6 @@
+<?php session_start();
+$idSua = 1;
+?>
 <?php
 session_start();
 if (!$_SESSION["dangnhap"])

@@ -52,5 +52,6 @@ class connect_database
           $link = $this->connect();
           return $link->insert_id;
       }
+     
 }
 ?>

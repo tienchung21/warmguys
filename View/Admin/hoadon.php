@@ -1,8 +1,5 @@
-<?php
-include_once('../../Model/quanlihoadon.php');
-include_once('../../Controller/c_quanlihoadon.php');
-$obj=new hoadondd();
-
+<?php session_start();
+$idSua = 1;
 ?>
 <!doctype html>
 <html lang="en">
@@ -41,7 +38,7 @@ $obj=new hoadondd();
 
         <!-- Sidebar wrapper start -->
         <?php
-        include_once('sidebar.php');
+        include('sidebar.php');
         ?>
         <!-- Sidebar wrapper end -->
 
@@ -49,6 +46,12 @@ $obj=new hoadondd();
             <?php
             include_once('header.php');
             ?>
+            <?php
+include('../../Model/quanlihoadon.php');
+include('../../Controller/c_quanlihoadon.php');
+$obj=new hoadondd();
+
+?>
             <div class="text-end mb-3">
                 <a href="goitap.php" class="btn btn-primary">
                     <i class="bi bi-arrow-left-circle"></i> Quay lại

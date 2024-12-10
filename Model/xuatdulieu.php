@@ -1,30 +1,8 @@
 <?php
-class database{
-    private function connect()
-    {
-        $conn= new mysqli("localhost","root","","warmguys");
-        if($conn->connect_errno)
-        {
-            echo"<script>Alert('Ket noi khong thanh cong')</script>";
-            exit();
-        }
-        else
-        return $conn;   
-    }
-    public function xuatdulieu($sql)
-    {
-        $arr=array();
-        $link=$this->connect();
-        $result=$link->query($sql);
-        if($result->num_rows)
-        {
-            while($row=$result->fetch_assoc())
-            $arr[]=$row;
-            return $arr;
-        }
-        else
-        return 0;
-    }
+include_once('connect.php');
+class database  extends connect_database{
+  
+
 
     public function danhsachthanhvien()
     {

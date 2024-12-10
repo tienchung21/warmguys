@@ -1,5 +1,5 @@
 <?php
-include_once('connect.php');
+include('connect.php');
 
 class hoadon extends connect_database
 {
@@ -11,12 +11,16 @@ class hoadon extends connect_database
             $DenNgay = $_POST["denngay"];
             $sql = "select MaHD,NgayLap,TrangThaiTT,TenTV,g.TenGoi,g.GiaGoi,g.ThoiHanGoi,MaKM,ThanhTien from 
             hoadon h inner join goitap g  on g.MaGoi=h.MaGoi
-            WHERE TrangThaiTT='Đã Thanh Toán' AND NgayLap BETWEEN '" . $TuNgay . "' AND '" . $DenNgay . "'";
+            WHERE TrangThaiTT='Chưa Thanh Toán' AND NgayLap BETWEEN '" . $TuNgay . "' AND '" . $DenNgay . "'";
         } else {
             $sql = "select MaHD,NgayLap,TrangThaiTT,TenTV,g.TenGoi,g.GiaGoi,g.ThoiHanGoi,MaKM,ThanhTien from 
             hoadon h inner join goitap g  on g.MaGoi=h.MaGoi
-            WHERE TrangThaiTT='Đã Thanh Toán'";
+            WHERE TrangThaiTT='Chưa Thanh Toán'";
         }
         return $this->xuatdulieu($sql);
+    }
+    public function capnhatthanhtoan($sql)
+    {
+        return $this->tuychinh($sql);
     }
 }

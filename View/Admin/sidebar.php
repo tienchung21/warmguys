@@ -10,11 +10,19 @@
     <div class="sidebar-menu">
         <div class="sidebarMenuScroll">
             <ul>
-                <li class="sidebar-dropdown active">
+                <li class="sidebar-dropdown ">
                     <a href="quanlithanhvien.php">
                         <i class="bi bi-person"></i>
                         <span class="menu-text">Quản lí thành viên</span>
                     </a>
+
+                </li>
+                <li class="sidebar-dropdown">
+                    <a href="dstapthu.php">
+                        <i class="bi bi-person"></i>
+                        <span class="menu-text">Quản lí KH tập thử</span>
+                    </a>
+
                 </li>
                 <li class="sidebar-dropdown active">
                     <a href="device.php">
@@ -88,7 +96,10 @@
                     <div class="sidebar-submenu">
                         <ul>
                             <li>
-                                <a href="#">1</a>
+                                <a href="hoadon.php">Tạo hóa đơn</a>
+                            </li>
+                            <li>
+                                <a href="hoadonchuatt.php">Hóa đơn chưa thanh toán</a>
                             </li>
                             <li>
                                 <a href="giahanthanhvien.php">Danh sách thành viên cần gia hạn</a>

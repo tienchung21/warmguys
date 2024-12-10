@@ -20,7 +20,7 @@ if (isset($_POST["btThem"])) {
     $SoDienThoai = $_POST["phone"];
     $Email = $_POST["email"];
     $NgayPhanHoi = date("Y-m-d H:i:s"); // Chuyển timestamp thành định dạng DATETIME
-    $TrangThaiPH = "Chưa được duyệt"; // Mặc định trạng thái
+    $TrangThaiPH = "Chưa duyệt"; // Mặc định trạng thái
 
     // Chuẩn bị câu lệnh SQL để thêm vào bảng phanhoi
     $sql = "INSERT INTO phanhoi (NoiDung, TrangThaiPH, MaTV, Date, sdt, email,TenTV) 

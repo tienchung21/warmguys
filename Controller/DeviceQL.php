@@ -128,9 +128,9 @@ $p = new deviceQL();
                 $sqltrangthaiTB = "UPDATE thietbi
                 SET TinhTrangTB = 'Bảo trì'
                 WHERE MaTB = '$idTB';"; 
-                 $sqltrangthaighinhan = "UPDATE chitietghinhantinhtrang
-                 SET trangthai = 'Bảo trì'
-                 WHERE ID = '$id';"; 
+                $sqltrangthaighinhan = "UPDATE chitietghinhantinhtrang
+                SET trangthai = 'Đã bảo trì'
+                WHERE ID = '$id';"; 
 
 
                 echo $sqltrangthaighinhan;

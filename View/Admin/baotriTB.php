@@ -1,5 +1,5 @@
 <?php
-    error_reporting(0);
+    
     session_start();
 	include_once("../../Controller/DeviceController.php");
 	include_once('../../Controller/DeviceQL.php');
@@ -59,11 +59,11 @@
 									<?php
 										$sql= "SELECT 
 											t.TenTB,
+											b.Motabaotri,
+                                            b.Ngaybaotri,
                                             n.TenNV,
-                                            b.Motabaotri,
                                             b.GiaiPhap,
-                                            b.KetQua,
-                                            b.Ngaybaotri
+                                            b.KetQua
                                             FROM 
                                                 baotri b
                                             JOIN 
@@ -71,7 +71,7 @@
                                             JOIN 
                                                 nhanvien n ON b.nhanVienManv = n.MaNV;
                                             ";
-										$p->selectDsBaotriTB($sql);	
+										$p->selectDsbaotri($sql);
 									?>
 
 								</div>

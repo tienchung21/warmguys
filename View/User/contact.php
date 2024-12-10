@@ -42,43 +42,42 @@ include('../../Controller/cquanlyphanhoidd.php');
     <div class="header-area header-transparent">
         <div class="main-header header-sticky">
             <div class="container-fluid">
-                <div class="menu-wrapper d-flex align-items-center justify-content-between">
-                    <!-- Logo -->
-                    <div class="logo">
-                        <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+            <div class="menu-wrapper d-flex align-items-center justify-content-between">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/img/logo/logo.png" style="width:100px;" alt=""></a>
+                        </div>
+                        <!-- Main-menu -->
+                        <div class="main-menu f-right d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a href="index.html">Trang chủ</a></li>
+                                    <li><a href="about.html">Giới thiệu</a></li>
+                                    <li><a href="courses.html">Gói tập</a></li>
+                                    <li><a href="device.html">Thiết Bị</a></li>
+                                    <li><a href="gallery.html">Khuyến Mãi</a></li>
+                                    <li><a href="blog.html">Blog</a>
+                                        <ul class="submenu">
+                                            <li><a href="blog.html">Tin mới</a></li>
+                                            <li><a href="blog_details.html">Thông tin chi tiết</a></li>
+                                            <li><a href="elements.html">Yếu tố</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.php">Phản hồi</a></li>
+                                    <li><a href="danhgia.php">Đánh giá</a></li>
+                                    <li><a href="../Admin/index.php">quản lý</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Header-btn -->
+                        <div class="header-btns d-none d-lg-block f-right">
+                            <a href="dkytapthu.php" class="btn">Đăng Kí Tập Thử</a>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
                     </div>
-                    <!-- Main-menu -->
-                    <div class="main-menu f-right d-none d-lg-block">
-                        <nav>
-                            <ul id="navigation">
-                                <li><a href="index.html">Trang chủ</a></li>
-                                <li><a href="about.html">Giới thiệu</a></li>
-                                <li><a href="courses.html">Gói tập</a></li>
-                                <li><a href="pricing.html">Thiết bị</a></li>
-                                <li><a href="gallery.html">Khuyến mãi</a></li>
-                                <li><a href="blog.html">Tin Tức</a>
-                                    <ul class="submenu">
-                                        <li><a href="blog.html">Tin mới</a></li>
-                                        <li><a href="blog_details.html">Thông tin chi tiết</a></li>
-                                        <li><a href="elements.html">Yếu tố</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.php
-">Liên hệ</a></li>
-                                <li><a href="../Admin/index.php">quản lý</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- Header-btn -->
-                    <div class="header-btns d-none d-lg-block f-right">
-                        <a href="dkytapthu.php" class="btn">Đăng Kí Tập Thử</a>
-
-                    </div>
-                    <!-- Mobile Menu -->
-                    <div class="col-12">
-                        <div class="mobile_menu d-block d-lg-none"></div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

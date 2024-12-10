@@ -57,7 +57,7 @@
         <div class="header-area header-transparent">
             <div class="main-header header-sticky">
                 <div class="container-fluid">
-                    <div class="menu-wrapper d-flex align-items-center justify-content-between">
+                <div class="menu-wrapper d-flex align-items-center justify-content-between">
                         <!-- Logo -->
                         <div class="logo">
                             <a href="index.html"><img src="assets/img/logo/logo.png" style="width:100px;" alt=""></a>
@@ -78,7 +78,8 @@
                                             <li><a href="elements.html">Yếu tố</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.php">Liên hệ</a></li>
+                                    <li><a href="contact.php">Phản hồi</a></li>
+                                    <li><a href="danhgia.php">Đánh giá</a></li>
                                     <li><a href="../Admin/index.php">quản lý</a></li>
                                 </ul>
                             </nav>

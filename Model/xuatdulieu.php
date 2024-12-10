@@ -12,7 +12,7 @@ class database  extends connect_database{
     public function danhsachdanhgia()
     {
             $sql="SELECT 
-            phanhoi.*, thanhvien.* from phanhoi JOIN thanhvien ON phanhoi.MaTV = thanhvien.MaTV where TrangThaiPH='daduyet' ";
+            phanhoi.*, thanhvien.* from phanhoi JOIN thanhvien ON phanhoi.MaTV = thanhvien.MaTV where TrangThaiPH='Đã duyệt' ";
         return $this->xuatdulieu($sql);
     }
     public function danhsachtheodoi()

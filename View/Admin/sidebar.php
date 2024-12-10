@@ -79,9 +79,10 @@
                     </a>
                     <div class="sidebar-submenu">
                         <ul>
-                            <li>
-                                <a href="#">1</a>
+                        <li>
+                                <a href="nhacnhoditap.php">Thông báo nhắc nhở</a>
                             </li>
+
                             <li>
                                 <a href="theodoitapluyen.php">Theo dõi tập luyện</a>
                             </li>

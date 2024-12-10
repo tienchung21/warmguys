@@ -1,7 +1,11 @@
 <?php
+
+  
 include_once('connect.php');
 class database  extends connect_database{
   
+
+
     public function danhsachthanhvien()
     {
             $sql="select * from thanhvien ";

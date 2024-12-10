@@ -40,7 +40,7 @@ if (!$_SESSION["dangnhap"])
 
         <!-- Sidebar wrapper start -->
         <?php
-        include('sidebar.php');
+        include_once('sidebar.php');
         ?>
         <!-- Sidebar wrapper end -->
 
@@ -54,8 +54,8 @@ if (!$_SESSION["dangnhap"])
                 </a>
             </div>
             <?php
-            include('../../model/quanlygoitap.php');
-            include('../../Controller/cgoitap.php');
+           include_once('../../model/quanlygoitap.php');
+            include_once('../../Controller/cgoitap.php');
            
             
             $obj = new goitap();

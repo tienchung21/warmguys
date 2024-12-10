@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!$_SESSION["dangnhap"])
- 	header("Location:login.php");
+header("Location:login.php");
 ?>
 <!doctype html>
 <html lang="en">
@@ -59,48 +59,47 @@ if (!$_SESSION["dangnhap"])
         <div class="main-container">
             <?php
 				include('header.php');
-			?>
-            <?php
-			
+?>
+
+
             include('../../model/quanlytapthu.php');
-			$obj = new dkytapthu();
+            $obj = new dkytapthu();
             $dstapthu = $obj->dsdkytapthu();
-			if ($dstapthu) {
-            echo '    <div class="row" style="margin-left: 10px;">
-							<div class="col-12">
-							<h4>Danh sách khách hàng đăng ký tập thử</h4>
-									<div class="card-body">
-										<div class="table-responsive">
-											<table class="table m-0">
-												<thead>
-													<tr>
-														<th>Mã KH đăng ký</th>
-														<th>Họ và tên</th>
-														<th>Số điện thoại</th>
-														<th>Email</th>
-														<th>Số CCCD</th>
-														<th>Thời gian gọi cho KH</th>
-													</tr>
-												</thead>
-												<tbody>';
-			for ($i = 0; $i < count($dstapthu); $i++) {
-							echo                       '<tr>
-														<td>'.$dstapthu[$i]["ID"].'</td>
-														<td>'.$dstapthu[$i]["Hoten"].'</td>
-														<td>'.$dstapthu[$i]["SDT"].'</td>
-														<td>'.$dstapthu[$i]["Email"].'</td>
-                                                        <td>'.$dstapthu[$i]["CanCuoc"].'</td>
-														<td>'.$dstapthu[$i]["Thoigianlienlac"].'</td>
-														</tr>
-                                                    ';}
-                echo '
-				</tbody>
-                        </table>
+            if ($dstapthu) {
+            echo ' <div class="row" style="margin-left: 10px;">
+                <div class="col-12">
+                    <h4>Danh sách khách hàng đăng ký tập thử</h4>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                    <tr>
+                                        <th>Mã KH đăng ký</th>
+                                        <th>Họ và tên</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Email</th>
+                                        <th>Số CCCD</th>
+                                        <th>Thời gian gọi cho KH</th>
+                                    </tr>
+                                </thead>
+                                <tbody>';
+                                    for ($i = 0; $i < count($dstapthu); $i++) { echo '<tr>
+														<td>' .$dstapthu[$i]["ID"].'</td>
+                                        <td>'.$dstapthu[$i]["Hoten"].'</td>
+                                        <td>'.$dstapthu[$i]["SDT"].'</td>
+                                        <td>'.$dstapthu[$i]["Email"].'</td>
+                                        <td>'.$dstapthu[$i]["CanCuoc"].'</td>
+                                        <td>'.$dstapthu[$i]["Thoigianlienlac"].'</td>
+                                        </tr>
+                                        ';}
+                                        echo '
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>'; }
-			?>
+            ?>
             <!-- Page wrapper end -->
 
 

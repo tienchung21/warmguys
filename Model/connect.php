@@ -42,10 +42,11 @@ class connect_database
         else
             return 0;
     }
-    // Thêm phương thức để lấy insert_id
-    public function getLastInsertId()
-    {
-        $link = $this->connect();
-        return $link->insert_id;
-    }
+      // Thêm phương thức để lấy insert_id
+      public function getLastInsertId()
+      {
+          $link = $this->connect();
+          return $link->insert_id;
+      }
+     
 }

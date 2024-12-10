@@ -100,7 +100,7 @@ $p = new deviceQL();
 
         if(isset($_POST['nutGhinhan'])){
             $idTB = $_POST['idtb'];
-            $id = $_POST['id'];
+            // $id = $_POST['id'];
             $Manv = $_POST['idnv'];
             $mota = $_POST['mota'];
             $thoigian = $_POST['thoigianghinhan'];

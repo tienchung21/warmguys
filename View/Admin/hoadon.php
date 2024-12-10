@@ -1,12 +1,5 @@
-<?php
-include('../../Model/quanlihoadon.php');
-include('../../Controller/c_quanlihoadon.php');
-
-session_start();
-if (!$_SESSION["dangnhap"])
- 	header("Location:login.php");
-
-
+<?php session_start();
+$idSua = 1;
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,7 +38,7 @@ if (!$_SESSION["dangnhap"])
 
         <!-- Sidebar wrapper start -->
         <?php
-        include_once('sidebar.php');
+        include('sidebar.php');
         ?>
         <!-- Sidebar wrapper end -->
 
@@ -53,6 +46,12 @@ if (!$_SESSION["dangnhap"])
             <?php
             include_once('header.php');
             ?>
+            <?php
+include('../../Model/quanlihoadon.php');
+include('../../Controller/c_quanlihoadon.php');
+$obj=new hoadondd();
+
+?>
             <div class="text-end mb-3">
                 <a href="goitap.php" class="btn btn-primary">
                     <i class="bi bi-arrow-left-circle"></i> Quay lại

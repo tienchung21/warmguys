@@ -1,5 +1,5 @@
 <?php
-include('connect.php');
+include_once('connect.php');
 class khuyenmai extends connect_database{
     public function danhsachkhuyenmai($MaKM='')
     {

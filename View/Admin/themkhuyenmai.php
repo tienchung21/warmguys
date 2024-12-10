@@ -2,6 +2,9 @@
 include_once('../../model/quanlykhuyenmai.php');
 include('../../Controller/c_discount.php');
 ?>
+<?php session_start();
+$idSua = 1;
+?>
 
 <!doctype html>
 <html lang="en">

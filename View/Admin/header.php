@@ -38,7 +38,6 @@
     <!-- Header actions ccontainer start -->
     <div class="header-actions-container">
 
-
         <!-- Search container start -->
         <div class="search-container">
 
@@ -49,7 +48,6 @@
                     <i class="bi bi-search"></i>
 
                 </button>
-
             </div>
             <!-- Search input group end -->
 
@@ -66,7 +64,7 @@
                 <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
                     <span class="user-name d-none d-md-block"> <?php
     echo htmlspecialchars($taikhoan[0]["TenNV"], ENT_QUOTES, 'UTF-8');
-?> </span>
+?></span>
                     <span class="avatar">
                         <img src="assets/images/user.png" alt="Admin Templates">
                         <span class="status online"></span>

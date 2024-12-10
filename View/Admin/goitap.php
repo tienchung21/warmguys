@@ -1,3 +1,6 @@
+<?php session_start();
+$idSua = 1;
+?>
 <!doctype html>
 <html lang="en">
 
@@ -35,7 +38,7 @@
 
         <!-- Sidebar wrapper start -->
         <?php
-        include('sidebar.php');
+        include_once('sidebar.php');
         ?>
         <!-- Sidebar wrapper end -->
 
@@ -49,8 +52,8 @@
                 </a>
             </div>
             <?php
-            include('../../model/quanlygoitap.php');
-            include('../../Controller/cgoitap.php');
+           include_once('../../model/quanlygoitap.php');
+            include_once('../../Controller/cgoitap.php');
            
             
             $obj = new goitap();

@@ -1,3 +1,6 @@
+<?php session_start();
+$idSua = 1;
+?>
 <!doctype html>
 <html lang="en">
 	<head>

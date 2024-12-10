@@ -1,5 +1,5 @@
 <?php
-include('connect.php');
+include_once('connect.php');
 class phanhoidd extends connect_database{
     public function danhsachphanhoidd($maph='')
     {

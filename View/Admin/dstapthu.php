@@ -1,3 +1,6 @@
+<?php session_start();
+$idSua = 1;
+?>
 <!doctype html>
 <html lang="en">
 	<head>
@@ -51,7 +54,7 @@
 
 			<div class="main-container">
 			<?php
-				include('header.php');
+				include_once('header.php');
 			?>
 			<?php
 			

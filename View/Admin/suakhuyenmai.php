@@ -1,3 +1,6 @@
+<?php session_start();
+$idSua = 1;
+?>
 <?php
 include_once('../../model/quanlykhuyenmai.php');
 include('../../Controller/c_discount.php');

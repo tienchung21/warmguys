@@ -51,11 +51,12 @@
 
 			<div class="main-container">
 			<?php
-				include_once('header.php');
+				include('header.php');
 			?>
 			<?php
 			
-            include('../../model/quanlydoanhthu.php');
+            include('../../model/quanlychuatt.php');
+			include('../../Controller/cquanlytt.php');
 			$obj = new hoadon();
             $hoadon = $obj->danhsachhoadon();
 			$tong=0;
@@ -107,20 +108,13 @@
 														<td>'.$hoadon[$i]["ThoiHanGoi"].' Tháng </td>
                                                         <td>'.$hoadon[$i]["MaKM"].'</td>
                                                         <td>'.number_format($hoadon[$i]["ThanhTien"]).' VND</td>
+                                                        <td><form method="POST" style="display:inline-block;">
+                                    <button type="submit" class="btn btn-outline-danger" name="btTT" value="' . $hoadon[$i]["MaHD"] . '">Cập nhật</button>
+                                </form></td>
 													</tr>
+
                                                     ';}
                 echo '
-						<tr>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-														<td></td>
-                                                        <td></td>
-														<td></td>
-                                                        <td>Tổng : '.number_format($tong).' VND</td>
-													</tr>
 				</tbody>
                         </table>
                     </div>

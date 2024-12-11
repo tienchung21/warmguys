@@ -90,13 +90,6 @@ $p = new deviceQL();
         
             $loaiTB_names = $loaiTB_names[$loaiTB];
             $tingtrang_names = $tingtrang_names[$tinhtrang];
-            // echo ($tenTB);
-            // echo ($loaiTB_names);
-            // echo ($tingtrang_names);
-            // echo ($hinhanh);
-            // echo ($idTB);
-            // echo ($p->Capnhatthietbi($idTB, $tenTB, $loaiTB_names, $tingtrang_names, $hinhanh));
-            // Gọi phương thức cập nhật thiết bị
             if ($p->Capnhatthietbi($idTB, $tenTB, $loaiTB_names, $tingtrang_names, $hinhanh)==1) {
                 echo "<script>alert('Cập nhật thiết bị thành công!'); window.location='device.php';</script>";
             } else {
@@ -107,11 +100,10 @@ $p = new deviceQL();
 
         if(isset($_POST['nutGhinhan'])){
             $idTB = $_POST['idtb'];
-            // $id = $_POST['id'];
             $Manv = $_POST['idnv'];
             $mota = $_POST['mota'];
             $thoigian = $_POST['thoigianghinhan'];
-
+           
             if($mota!=""){
                 $parts = explode(' ', $thoigian); // Tách chuỗi theo khoảng trắng
                 $ngaythangnam = $parts[0]; // Lấy phần ngày tháng năm
@@ -124,18 +116,13 @@ $p = new deviceQL();
                 $sql = "INSERT INTO chitietghinhantinhtrang (Motatinhtrang, Ngayghinhan, thietBiMaTB, nhanVienManv, time)
                     VALUES ('$mota', '$ngaythangnamFormatted', '$idTB', '$Manv', '$time');";
 
-
                 $sqltrangthaiTB = "UPDATE thietbi
                 SET TinhTrangTB = 'Bảo trì'
                 WHERE MaTB = '$idTB';"; 
-                 $sqltrangthaighinhan = "UPDATE chitietghinhantinhtrang
-                 SET trangthai = 'Bảo trì'
-                 WHERE ID = '$id';"; 
 
 
-                echo $sqltrangthaighinhan;
                 if ($p->chitietghinhan($sql)) {
-                    if($p->chitietghinhan($sqltrangthaiTB)&&$p->chitietghinhan($sqltrangthaighinhan)){
+                    if($p->chitietghinhan($sqltrangthaiTB)){
                         echo "<script>alert('Ghi nhận tình trạng thành công'); window.location='DStinhtrangTB.php';</script>";
                     }
                 } else {
@@ -165,7 +152,6 @@ $p = new deviceQL();
                                     SET trangthai = 'Đã bảo trì'
                                     WHERE ID = '$id';
                                     ";  
-                
                 $sqltrangthaiTB = "UPDATE thietbi
                 SET TinhTrangTB = 'Bình thường'
                 WHERE MaTB = '$idTB';"; 

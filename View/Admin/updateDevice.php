@@ -3,6 +3,7 @@ include_once('../../Model/Modeldevice.php');
 include_once('../../Controller/DeviceController.php');
 include('../../Controller/DeviceQL.php');
 $p = new device();
+session_start();
 ?>
 
 <!doctype html>

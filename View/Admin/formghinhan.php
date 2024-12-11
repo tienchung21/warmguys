@@ -1,5 +1,6 @@
 
 <?php
+
 session_start();
 if (!$_SESSION["dangnhap"])
  	header("Location:login.php");
@@ -117,14 +118,12 @@ $p = new device();
                             <div class="col-12">
                                 <div class="text-end">
                                     <input type="hidden" value="<?php echo $_GET['id'];?>" class="form-control" name="idtb"/>
-									
                                     <input 
 											type="hidden" 
-											value="<?php echo ($_SESSION['dangnhap']['nhanVienManv'] ?? ''); ?>" 
+											value="<?php echo ($_SESSION['dangnhap']['Manv'] ?? ''); ?>" 
 											class="form-control" 
 											name="idnv"
 										/>
-
                                         <button type="submit" name="nutGhinhan" class="btn btn-primary">
                                             <i class="bi bi-arrow-repeat"></i>Ghi nhận
                                         </button>

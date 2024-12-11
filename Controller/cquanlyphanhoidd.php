@@ -14,14 +14,24 @@ if (isset($_POST["btThem"])) {
     // Đặt múi giờ Việt Nam
     date_default_timezone_set('Asia/Ho_Chi_Minh');
     // Lấy dữ liệu từ form
-    $tenTV=$_POST["customerName"];
+    $tenTV = $_POST["customerName"];
     $NoiDungPhanHoi = $_POST["feedback"];
-    $MaTV = !empty($_POST["memberId"]) ? $_POST["memberId"] : "NULL"; // Cho phép NULL nếu không có thành viên
+    $MaTV = !empty($_POST["memberId"]); // Cho phép NULL nếu không có thành viên
     $SoDienThoai = $_POST["phone"];
     $Email = $_POST["email"];
     $NgayPhanHoi = date("Y-m-d H:i:s"); // Chuyển timestamp thành định dạng DATETIME
+    $TrangThaiPH = "Chưa duyệt"; // Mặc định trạng thái
+     // Kiểm tra nếu nhập mã thành viên thì kiểm tra tồn tại
+     if ($MaTV !== null) {
+        $checkSQL = "SELECT 1 FROM thanhvien WHERE MaTV = '$MaTV' LIMIT 1"; // Chỉ cần kiểm tra sự tồn tại
+        $result = $obj->xuatdulieu($checkSQL);
 
-    $TrangThaiPH = "Chờ Duyệt"; // Mặc định trạng thái
+        if (!$result) {
+            // Nếu không tìm thấy mã thành viên
+            echo "<script>alert('Mã thành viên không tồn tại! Vui lòng kiểm tra lại.');window.location='contact.php';</script>";
+            exit; // Dừng xử lý tiếp
+        }
+    }
 
     // Chuẩn bị câu lệnh SQL để thêm vào bảng phanhoi
     $sql = "INSERT INTO phanhoi (NoiDung, TrangThaiPH, MaTV, Date, sdt, email,TenTV) 
@@ -35,4 +45,4 @@ if (isset($_POST["btThem"])) {
     }
 }
 
-?>
+?>  

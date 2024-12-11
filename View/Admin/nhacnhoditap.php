@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 	<head>
@@ -62,7 +65,7 @@
 
 			<div class="main-container">
 			<?php
-				// include('header.php');
+				include('header.php');
 			?>
 			<?php
 			

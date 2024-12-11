@@ -1,6 +1,4 @@
-<?php session_start();
-$idSua = 1;
-?>
+
 <?php
 session_start();
 if (!$_SESSION["dangnhap"])
@@ -141,7 +139,7 @@ $p = new device();
 										<input type="hidden" value="<?php echo $_GET['idTB'];?>" class="form-control" name="idtb"/>
 										<input 
 												type="hidden" 
-												value="<?php echo ($_SESSION['dangnhap']['nhanVienManv'] ?? ''); ?>" 
+												value="<?php echo ($_SESSION['dangnhap']['Manv'] ?? ''); ?>" 
 												class="form-control" 
 												name="idnv"
 											/>

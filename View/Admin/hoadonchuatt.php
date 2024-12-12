@@ -66,19 +66,10 @@ $idSua = 1;
 			if ($hoadon) {
             echo '    <div class="row" style="margin-left: 10px;">
 							<div class="col-12">
-							<h4>Thống kê doanh thu</h4>
+							<h4>Thống kê hóa đơn chưa thanh toán</h4>
 								<div class="card">
-								<form method="Post">
-<div class="card col-8">
-    <div class="card col-8 date" style="display: inline-block; margin-left:20px;">Từ ngày &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Đến ngày</div>
-	<div class="card col-8 date" style="display: inline-block; margin-left:20px;">
-	<input type="date" name="tungay" id="tungay" required style="display: flex; width: 150px; float:left;"> 
-	<input type="date" name="denngay" id="denngay" required style="display: flex; width: 150px;margin-left:10px ;float:left;">
-	<input type="submit" name="subngay" value="Thống kê" style="margin-left:10px ; width: 100px; background-color:#99999 ; border-color: green; border-radius: 2px;">
-	</div>
-</div>	
-</form>
-											</form method="post">
+								
+											<form method="post">
 											
 										</div>
 										
@@ -127,19 +118,9 @@ $idSua = 1;
 			else {
 				echo '    <div class="row" style="margin-left: 10px;">
 				<div class="col-12">
-				<h4>Thống kê doanh thu</h4>
+				<h4>Thống kê hóa đơn chưa thanh toán</h4>
 					<div class="card">
-					<form method="Post">
-<div class="card col-8">
-<div class="card col-8 date" style="display: inline-block; margin-left:20px;">Từ ngày &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Đến ngày</div>
-<div class="card col-8 date" style="display: inline-block; margin-left:20px;">
-<input type="date" name="tungay" id="tungay" required style="display: flex; width: 150px; float:left;"> 
-<input type="date" name="denngay" id="denngay" required style="display: flex; width: 150px;margin-left:10px ;float:left;">
-<input type="submit" name="subngay" value="Thống kê" style="margin-left:10px ; width: 100px; background-color:#99999 ; border-color: green; border-radius: 2px;">
-</div>
-</div>	
-</form>
-								</form method="post">
+								<form method="post">
 								
 							</div>
 							

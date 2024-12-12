@@ -100,10 +100,10 @@
                                 <a href="hoadon.php">Tạo hóa đơn</a>
                             </li>
                             <li>
-                                <a href="hoadonchuatt.php">Hóa đơn chưa thanh toán</a>
+                                <a href="hoadonchuatt.php">Cập nhật trạng thái thanh toán</a>
                             </li>
                             <li>
-                                <a href="giahanthanhvien.php">Danh sách thành viên cần gia hạn</a>
+                                <a href="giahanthanhvien.php">Nhắc nhở gia hạn</a>
                             </li>
                         </ul>
                     </div>

@@ -95,6 +95,7 @@
 					$obj = new database();
 
 					$thanhvien = $obj->danhsachtheodoi();
+					$thanhvien1 = $obj->danhsachthanhvien();
 
 					// xử lý
 					// thêm
@@ -102,11 +103,23 @@
 						$MaTV = $_POST["MaTV"];
 						$NgayTap = $_POST["NgayTap"];
 						$GioVao = $_POST["GioVao"];
-						$sql = "insert into theodoitapluyen(MaTV,NgayTap,GioVao) values ('$MaTV','$NgayTap','$GioVao')";
-						if ($obj->themsanpham($sql))
-							echo "<script>alert('ghi nhận thành công');window.location.href = 'theodoitapluyen.php';</script>";
-						else
-							echo "Them that bai";
+					
+						// Kiểm tra sự tồn tại của MaTV
+						$checkQuery = "SELECT COUNT(*) AS count FROM thanhvien WHERE MaTV = '$MaTV'";
+						$result = $obj->xuatdulieu($checkQuery);
+					
+						if ($result[0]["count"] > 0) {
+							// Nếu tồn tại MaTV, thêm vào lịch sử tập luyện
+							$sql = "INSERT INTO theodoitapluyen (MaTV, NgayTap, GioVao) VALUES ('$MaTV', '$NgayTap', '$GioVao')";
+							if ($obj->themsanpham($sql)) {
+								echo "<script>alert('Ghi nhận thành công');window.location.href = 'theodoitapluyen.php';</script>";
+							} else {
+								echo "<script>alert('Thêm thất bại, vui lòng thử lại!');</script>";
+							}
+						} else {
+							// Nếu không tồn tại MaTV
+							echo "<script>alert('Mã Thành Viên không tồn tại!');</script>";
+						}
 					}
                   ?>
                 
@@ -147,47 +160,54 @@
 					</div>
 
                     <!-- themtheodoi -->
-                    <div class="modal fade" role="dialog" id="momodalthem">
-					<div class="modal-dialog">
-					<form method="POST" id="editCategoryForm">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h3 class="modal-title text-center">Điểm danh</h3>
-										<button type="button" class="btn-close" data-dismiss="modal"
-											aria-label="Close"></button>
-									</div>
-									<div class="modal-body">
-										<input type="hidden" name="MaTV" id="editMaTV">
-										<div class="mb-3">
-											<label for="editTenTV" class="form-label">Mã Thành Viên</label>
-											<input type="text" class="form-control" name="MaTV" id="editTenTV"
-												required>
-										</div>
-                                        <div class="mb-3">
-                                            <label for="editNgayTap" class="form-label">Ngày Tập</label>
-                                            <input type="date" class="form-control" name="NgayTap" id="editNgayTap" value="<?php echo date('Y-m-d'); ?>">
-                                        </div>
-										<div class="mb-3">
+					<div class="modal fade" role="dialog" id="momodalthem">
+    <div class="modal-dialog">
+        <form method="POST" id="editCategoryForm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title text-center">Điểm danh</h3>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="MaTV" id="editMaTV">
 
-                                      
-    <label for="editGioPhut" class="form-label">Giờ</label>
-    <input type="time" class="form-control" name="GioVao" id="editGioPhut" value="<?php 
-        date_default_timezone_set('Asia/Ho_Chi_Minh'); // Đặt múi giờ (thay thế nếu cần)
-        echo date('H:i'); // Lấy giờ hiện tại theo định dạng 24 giờ
-    ?>">
+                    <!-- Mã Thành Viên -->
+                    <div class="mb-3">
+                        <label for="editTenTV" class="form-label">Mã Thành Viên</label>
+                        <input type="text" class="form-control" name="MaTV" id="editTenTV"
+                               pattern="[A-Za-z0-9]+" title="Mã thành viên chỉ chứa ký tự chữ và số." required>
+                    </div>
+
+                    <!-- Ngày Tập -->
+                   <!-- Ngày Tập -->
+<div class="mb-3">
+    <label for="editNgayTap" class="form-label">Ngày Tập</label>
+    <input type="date" class="form-control" name="NgayTap" id="editNgayTap"
+           value="<?php echo date('Y-m-d'); ?>" 
+           max="<?php echo date('Y-m-d'); ?>" required>
+</div>
 
 
-                                        </div>
+                    <!-- Giờ Vào -->
+                    <div class="mb-3">
+                        <label for="editGioPhut" class="form-label">Giờ</label>
+                        <input type="time" class="form-control" name="GioVao" id="editGioPhut"
+                               value="<?php 
+                                   date_default_timezone_set('Asia/Ho_Chi_Minh');
+                                   echo date('H:i'); 
+                               ?>" required>
+                    </div>
+                </div>
 
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-										<button type="submit" name="btThem" class="btn btn-primary">Cập Nhật</button>
-									</div>
-								</div>
-							</form>
-					</div>
-				</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                    <button type="submit" name="btThem" class="btn btn-primary">Cập Nhật</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 
 
 
@@ -250,7 +270,37 @@
 			document.getElementById("modal-sua").style.display = "flex";
 		}
 	</script> -->
+<script>
+	document.getElementById("editCategoryForm").addEventListener("submit", function (event) {
+    const maTV = document.getElementById("editTenTV").value.trim();
+    const gioVao = document.getElementById("editGioPhut").value.trim();
+    const ngayTap = document.getElementById("editNgayTap").value.trim();
 
+    if (!maTV || !/^[A-Za-z0-9]+$/.test(maTV)) {
+        alert("Mã thành viên chỉ chứa ký tự chữ và số!");
+        event.preventDefault();
+        return;
+    }
+
+    if (!ngayTap) {
+        alert("Ngày tập không được để trống!");
+        event.preventDefault();
+        return;
+    }
+	if (ngayTap > today) {
+        alert("Ngày tập không được vượt quá ngày hiện tại!");
+        event.preventDefault();
+        return;
+    }
+
+    if (!gioVao) {
+        alert("Giờ không được để trống!");
+        event.preventDefault();
+        return;
+    }
+});
+
+</script>
 </body>
 
 </html>

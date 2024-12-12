@@ -265,46 +265,57 @@ include_once('../../Model/xuatdulieu.php');
 
 					<!-- Modal Sửa Danh Mục -->
 					<div id="editCategoryModal" class="modal fade" role="dialog">
-						<div class="modal-dialog">
-							<form method="POST" id="editCategoryForm">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h3 class="modal-title text-center">SỬA THÀNH VIÊN</h3>
-										<button type="button" class="btn-close" data-dismiss="modal"
-											aria-label="Close"></button>
-									</div>
-									<div class="modal-body">
-										<input type="hidden" name="MaTV" id="editMaTV">
-										<div class="mb-3">
-											<label for="editTenTV" class="form-label">Tên Thành viên</label>
-											<input type="text" class="form-control" name="TenTV" id="editTenTV"
-												required>
-										</div>
-										<div class="mb-3">
-											<label for="editSoDTTV" class="form-label">SDT</label>
-											<textarea class="form-control" name="SoDTTV" id="editSoDTTV"></textarea>
-										</div>
-										<div class="mb-3">
-											<label for="editEmailTV" class="form-label">Email</label>
-											<textarea class="form-control" name="EmailTV" id="editEmailTV"></textarea>
-										</div>
-										<div class="mb-3">
-											<label for="editDiaChiTV" class="form-label">Địa chỉ</label>
-											<textarea class="form-control" name="DiaChiTV" id="editDiaChiTV"></textarea>
-										</div>
-										<div class="mb-3">
-											<label for="editGioiTinh" class="form-label">Giới tính</label>
-											<textarea class="form-control" name="GioiTinh" id="editGioiTinh"></textarea>
-										</div>
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-										<button type="submit" name="btSua" class="btn btn-primary">Cập Nhật</button>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
+    <div class="modal-dialog">
+        <form method="POST" id="editCategoryForm" onsubmit="return validateEditForm()">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title text-center">SỬA THÀNH VIÊN</h3>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="MaTV" id="editMaTV">
+                    <div class="mb-3">
+                        <label for="editTenTV" class="form-label">Tên Thành viên</label>
+                        <input type="text" class="form-control" name="TenTV" id="editTenTV" 
+                               pattern="^[^\d]+$" 
+                               title="Họ tên không được chứa số." 
+                               required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editSoDTTV" class="form-label">SDT</label>
+                        <input type="text" class="form-control" name="SoDTTV" id="editSoDTTV" 
+                               pattern="^\d{10,11}$" 
+                               title="Số điện thoại phải là số từ 10-11 chữ số." 
+                               required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editEmailTV" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="EmailTV" id="editEmailTV" 
+                               pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" 
+                               title="Email phải đúng định dạng @gmail.com." 
+                               required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editDiaChiTV" class="form-label">Địa chỉ</label>
+                        <textarea class="form-control" name="DiaChiTV" id="editDiaChiTV" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editGioiTinh" class="form-label">Giới tính</label>
+                        <select class="form-control" name="GioiTinh" id="editGioiTinh" required>
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                    <button type="submit" name="btSua" class="btn btn-primary">Cập Nhật</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 				</div>
 
 
@@ -322,46 +333,57 @@ include_once('../../Model/xuatdulieu.php');
 
 				<!-- modal -->
 				<div class="modal fade" role="dialog" id="momodalthem">
-					<div class="modal-dialog">
-					<form method="POST" id="editCategoryForm">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h3 class="modal-title text-center">THÊM THÀNH VIÊN</h3>
-										<button type="button" class="btn-close" data-dismiss="modal"
-											aria-label="Close"></button>
-									</div>
-									<div class="modal-body">
-										<input type="hidden" name="MaTV" id="editMaTV">
-										<div class="mb-3">
-											<label for="editTenTV" class="form-label">Tên Thành viên</label>
-											<input type="text" class="form-control" name="TenTV1" id="editTenTV"
-												required>
-										</div>
-										<div class="mb-3">
-											<label for="editSoDTTV" class="form-label">SDT</label>
-											<textarea class="form-control" name="SoDTTV1" id="editSoDTTV"></textarea>
-										</div>
-										<div class="mb-3">
-											<label for="editEmailTV" class="form-label">Email</label>
-											<textarea class="form-control" name="EmailTV1" id="editEmailTV"></textarea>
-										</div>
-										<div class="mb-3">
-											<label for="editDiaChiTV" class="form-label">Địa chỉ</label>
-											<textarea class="form-control" name="DiaChiTV1" id="editDiaChiTV"></textarea>
-										</div>
-										<div class="mb-3">
-											<label for="editGioiTinh" class="form-label">Giới tính</label>
-											<textarea class="form-control" name="GioiTinh1" id="editGioiTinh"></textarea>
-										</div>
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
-										<button type="submit" name="btThem" class="btn btn-primary">Cập Nhật</button>
-									</div>
-								</div>
-							</form>
-					</div>
-				</div>
+    <div class="modal-dialog">
+        <form method="POST" id="editCategoryForm" onsubmit="return validateForm()">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title text-center">THÊM THÀNH VIÊN</h3>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" name="MaTV" id="editMaTV">
+                    <div class="mb-3">
+                        <label for="editTenTV" class="form-label">Tên Thành viên</label>
+                        <input type="text" class="form-control" name="TenTV1" id="editTenTV" 
+                               pattern="^[^\d]+$" 
+                               title="Họ tên không được chứa số." 
+                               required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editSoDTTV" class="form-label">SDT</label>
+                        <input type="text" class="form-control" name="SoDTTV1" id="editSoDTTV" 
+                               pattern="^\d{10,11}$" 
+                               title="Số điện thoại phải là số từ 10-11 chữ số." 
+                               required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editEmailTV" class="form-label">Email</label>
+                        <input type="email" class="form-control" name="EmailTV1" id="editEmailTV" 
+                               pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" 
+                               title="Email phải đúng định dạng @gmail.com." 
+                               required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editDiaChiTV" class="form-label">Địa chỉ</label>
+                        <textarea class="form-control" name="DiaChiTV1" id="editDiaChiTV" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="editGioiTinh" class="form-label">Giới tính</label>
+                        <select class="form-control" name="GioiTinh1" id="editGioiTinh" required>
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+                    <button type="submit" name="btThem" class="btn btn-primary">Thêm thành viên</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
 				<!-- <form method="post" enctype="multipart/form-data">
 					<div class="modal-them" id="modal-sua">
 						<table class="table-modal">
@@ -405,7 +427,7 @@ include_once('../../Model/xuatdulieu.php');
 
 			<!-- App Footer start -->
 			<div class="app-footer">
-				<span>© Arise admin 2023</span>
+				<s>© Arise admin 2023</span>
 			</div>
 			<!-- App footer end -->
 
@@ -457,6 +479,32 @@ include_once('../../Model/xuatdulieu.php');
 			document.getElementById("modal-sua").style.display = "flex";
 		}
 	</script> -->
+	<script>
+		function validateForm() {
+    const name = document.getElementById("editTenTV").value.trim();
+    const phone = document.getElementById("editSoDTTV").value.trim();
+    const email = document.getElementById("editEmailTV").value.trim();
+
+    const namePattern = /^[^\d]+$/; // Không chứa số
+    const phonePattern = /^\d{10,11}$/; // 10-11 chữ số
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/; // Định dạng email @gmail.com
+
+    if (!namePattern.test(name)) {
+        alert("Họ tên không được chứa số.");
+        return false;
+    }
+    if (!phonePattern.test(phone)) {
+        alert("Số điện thoại chỉ được chứa số và phải từ 10-11 chữ số.");
+        return false;
+    }
+    if (!emailPattern.test(email)) {
+        alert("Email phải đúng định dạng @gmail.com.");
+        return false;
+    }
+    return true;
+}
+
+	</script>
 
 </body>
 
